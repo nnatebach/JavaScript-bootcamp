@@ -7,6 +7,7 @@
 #### 6. Strings Quiz
 #### 7. Strings Escape Characters
 #### 8. String Template Literals
+#### 9. Null & Undefined
 
 =============================
 
@@ -698,3 +699,46 @@ These are not very commonly used but it is still useful to know them.
             ```
             'You bought 4 cucumbers, total price: $7.96'
             ```
+
+#### 9. Null & Undefined
+
+- Null
+    - Definition:
+        - "Intentional absence of any value" when you want something to be empty.
+        - Must be assigned.
+    - Example:
+
+        ```
+        // At the beginning of the application
+        // No one is logged in yet...
+        let loggedInUser = null; // Value is explicitly nothing
+        
+        // A user logs in
+        loggedInUser = 'Alan Rickman';
+        ```
+
+- Undefined:
+    - Definition
+        - Variables that do **not** have an assigned value.
+        - Normally it's the value we get back from JavaScript.
+
+        <img src="null_undefined_01.jpg" alt="null_undefined_01">
+
+    - Usage:
+        - You can set something to "undefined" but it's usually not something you would do
+    
+        <img src="null_undefined_02.jpg" alt="null_undefined_02">
+    
+        - If you declare a variable without initializing any value, you will get "undefined" value
+    
+        <img src="null_undefined_03.jpg" alt="null_undefined_03">
+    
+        - If you set a variable to "null", you will get an "undefined" value for that variable as well
+    
+        <img src="null_undefined_04.jpg" alt="null_undefined_04">
+
+- Conclusion:
+    - Null: "**Intentional** absence of any value" when you want something to be empty.
+    - Undefined: There is **NO defined value**, not necessarily that something is intentionally empty.
+
+    <img src="null_undefined_05.webp" alt="null_undefined_05">
