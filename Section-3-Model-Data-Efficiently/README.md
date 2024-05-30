@@ -8,6 +8,9 @@
 #### 7. Strings Escape Characters
 #### 8. String Template Literals
 #### 9. Null & Undefined
+#### 10. Math Object
+#### 11. typeof operator
+#### 12. parseInt & parseFloat
 
 =============================
 
@@ -62,7 +65,7 @@
     ```
     "alsdkfjoe2938475(*&*%#$"
     ```
-    <img src="strings_04.jpg" alt="strings-04">
+    <img src="./images/strings_04.jpg" alt="strings-04">
     <br>
     Whether you use single or double quotes, just make sure you are *consistent*!
     
@@ -80,7 +83,7 @@
         "he said, "haha""
         "he said, 'lol'"
         ```
-        <img src="strings_01.jpg" alt="strings-01">
+        <img src="./images/strings_01.jpg" alt="strings-01">
 
     - Incorrect
 
@@ -92,7 +95,7 @@
         ```
         Uncaught SyntaxError: Unexpected identifier 'she'
         ```
-        <img src="strings_02.jpg" alt="strings-02">
+        <img src="./images/strings_02.jpg" alt="strings-02">
 
 - Strings concatenation
     - Examples:
@@ -103,7 +106,7 @@
         firstName + lastName; // ZiggyCanarayface
         ```
     
-        <img src="strings_03.jpg" alt="strings-03">
+        <img src="./images/strings_03.jpg" alt="strings-03">
 
     - Add spaces and assign to a variable
     
@@ -130,7 +133,7 @@
 
 Strings are indexed. Each character has a corresponding index (a positional number)
 
-<img src="strings_05.jpg" alt="strings-05">
+<img src="./images/strings_05.jpg" alt="strings-05">
 
 - length
 
@@ -195,7 +198,7 @@ Strings are indexed. Each character has a corresponding index (a positional numb
             gibberish[gibberish.length - 1]; // "("
             ```
             
-        <img src="strings_06.jpg" alt="strings-06">
+        <img src="./images/strings_06.jpg" alt="strings-06">
         <br>
         
     - Changing character using index
@@ -422,7 +425,7 @@ The replace() method returns a new string with one, some, or all matches of a pa
     ```
     Output: "54" (string)
 
-    <img src="strings_quiz_01.jpg" alt="strings_quiz_01">
+    <img src="./images/strings_quiz_01.jpg" alt="strings_quiz_01">
 
 - 2 . What does this evaluate to?
 
@@ -431,7 +434,7 @@ The replace() method returns a new string with one, some, or all matches of a pa
     ```
     Output: "i"
 
-    <img src="strings_quiz_02.jpg" alt="strings_quiz_02">
+    <img src="./images/strings_quiz_02.jpg" alt="strings_quiz_02">
 
 - 3 . What does this evaluate to?
 
@@ -441,7 +444,7 @@ The replace() method returns a new string with one, some, or all matches of a pa
     - Output: undefined
     - Reason: There is no value of index 3 (non-existed).
 
-    <img src="strings_quiz_03.jpg" alt="strings_quiz_03">
+    <img src="./images/strings_quiz_03.jpg" alt="strings_quiz_03">
 
 - 4 . What is the value of *song*?
 
@@ -454,7 +457,7 @@ The replace() method returns a new string with one, some, or all matches of a pa
     "LONDON CALLING"
     ```
 
-    <img src="strings_quiz_04.jpg" alt="strings_quiz_04">
+    <img src="./images/strings_quiz_04.jpg" alt="strings_quiz_04">
 
 - 5 . What is the value of *cleanedInput*?
 
@@ -468,7 +471,7 @@ The replace() method returns a new string with one, some, or all matches of a pa
     ```
     **Notice:** The string value of "userInput" remains the same.
 
-    <img src="strings_quiz_05.jpg" alt="strings_quiz_05">
+    <img src="./images/strings_quiz_05.jpg" alt="strings_quiz_05">
 
 - 6 . What is the value of *index*?
 
@@ -481,7 +484,7 @@ The replace() method returns a new string with one, some, or all matches of a pa
     -1 // not found (non-existed)
     ```
 
-    <img src="strings_quiz_06.jpg" alt="strings_quiz_06">
+    <img src="./images/strings_quiz_06.jpg" alt="strings_quiz_06">
 
 - 7 . What is the value of *index*?
 
@@ -494,7 +497,7 @@ The replace() method returns a new string with one, some, or all matches of a pa
     7 // The first occurrence of "!" in the string
     ```
 
-    <img src="strings_quiz_07.jpg" alt="strings_quiz_07">
+    <img src="./images/strings_quiz_07.jpg" alt="strings_quiz_07">
 
 - 8 . What does this evaluate to?
 
@@ -507,7 +510,7 @@ The replace() method returns a new string with one, some, or all matches of a pa
     ```
     Reason: '' is an empty string but might be confusing with a space.
 
-    <img src="strings_quiz_08.jpg" alt="strings_quiz_08">
+    <img src="./images/strings_quiz_08.jpg" alt="strings_quiz_08">
 
 #### 7. Strings Escape Characters
 These are not very commonly used but it is still useful to know them.
@@ -531,7 +534,7 @@ These are not very commonly used but it is still useful to know them.
         '\'
         ```
 
-        <img src="strings_escape_character_01.jpg" alt="strings_escape_character_01">
+        <img src="./images/strings_escape_character_01.jpg" alt="strings_escape_character_01">
 
     - If you put a single backslash, regardless with or without the console.log function, it will throw an error.
 
@@ -543,7 +546,7 @@ These are not very commonly used but it is still useful to know them.
         Uncaught SyntaxError: Invalid or unexpected token
         ```
 
-        <img src="strings_escape_character_02.jpg" alt="strings_escape_character_02">
+        <img src="./images/strings_escape_character_02.jpg" alt="strings_escape_character_02">
 
     - Single quotes
 
@@ -555,7 +558,7 @@ These are not very commonly used but it is still useful to know them.
         "he said I ain't happy"
         ```
 
-        <img src="strings_escape_character_03.jpg" alt="strings_escape_character_03">
+        <img src="./images/strings_escape_character_03.jpg" alt="strings_escape_character_03">
 
     - Double quotes
 
@@ -568,7 +571,7 @@ These are not very commonly used but it is still useful to know them.
         ```
         Tip: You can escape the quotes with the backslash.
 
-        <img src="strings_escape_character_04.jpg" alt="strings_escape_character_04">
+        <img src="./images/strings_escape_character_04.jpg" alt="strings_escape_character_04">
 
     - Additional examples (**Special cases**)
         - New line character:
@@ -582,7 +585,7 @@ These are not very commonly used but it is still useful to know them.
             GOODBYE
             ```
     
-            <img src="strings_escape_character_05.jpg" alt="strings_escape_character_05">
+            <img src="./images/strings_escape_character_05.jpg" alt="strings_escape_character_05">
     
         - Tab character
     
@@ -594,7 +597,7 @@ These are not very commonly used but it is still useful to know them.
             	 ha
             ```
     
-            <img src="strings_escape_character_06.jpg" alt="strings_escape_character_06">
+            <img src="./images/strings_escape_character_06.jpg" alt="strings_escape_character_06">
 
         <br>
     
@@ -626,7 +629,7 @@ These are not very commonly used but it is still useful to know them.
     `' "`
     ```
 
-    <img src="strings_template_literals_01.jpg" alt="strings_template_literals_01.jpg">
+    <img src="./images/strings_template_literals_01.jpg" alt="strings_template_literals_01.jpg">
 
 - Usage - What template literals are really used for
     - Basic demonstrations
@@ -722,23 +725,198 @@ These are not very commonly used but it is still useful to know them.
         - Variables that do **not** have an assigned value.
         - Normally it's the value we get back from JavaScript.
 
-        <img src="null_undefined_01.jpg" alt="null_undefined_01">
+        <img src="./images/null_undefined_01.jpg" alt="null_undefined_01">
 
     - Usage:
         - You can set something to "undefined" but it's usually not something you would do
     
-        <img src="null_undefined_02.jpg" alt="null_undefined_02">
+        <img src="./images/null_undefined_02.jpg" alt="null_undefined_02">
     
         - If you declare a variable without initializing any value, you will get "undefined" value
     
-        <img src="null_undefined_03.jpg" alt="null_undefined_03">
+        <img src="./images/null_undefined_03.jpg" alt="null_undefined_03">
     
         - If you set a variable to "null", you will get an "undefined" value for that variable as well
     
-        <img src="null_undefined_04.jpg" alt="null_undefined_04">
+        <img src="./images/null_undefined_04.jpg" alt="null_undefined_04">
 
 - Conclusion:
     - Null: "**Intentional** absence of any value" when you want something to be empty.
     - Undefined: There is **NO defined value**, not necessarily that something is intentionally empty.
 
-    <img src="null_undefined_05.webp" alt="null_undefined_05">
+    <img src="./images/null_undefined_05.webp" alt="null_undefined_05">
+
+#### 10. Math Object
+- Definition:
+    - The math object is a collection of math functionality, different actions that have to do with math and numbers in some way.
+    - Properties and methods for mathematical constants and functions.
+- Examples:
+
+    ```
+    Math.PI; // 3.141592653589793
+    
+    // Rounding a number
+    Math.round(4.9); // 5
+    
+    // Absolute value
+    Math.abs(-456); // 456
+    
+    // Raises 2 to the fifth power
+    Math.pow(2, 5); // 32
+    
+    // Removes decimal
+    Math.floor(3.9999); // 3
+    ```
+
+    <img src="./images/math_number_01.jpg" alt="math_number_01">
+
+- Math.random()
+    - Definition: This gives us a random decimal between 0 and 1 (non-inclusive).
+    - Examples:
+
+        - Generating random decimals using Math.random()
+
+            ```
+            Math.random();
+            // 0.1544146312949577
+            Math.random();
+            // 0.4451910315927483
+            Math.random();
+            // 0.3566865982434615
+            ```
+            
+            <img src="./images/math_number_02.jpg" alt="math_number_02">
+
+        - Generating random numbers between 1 and 10 using Math.random()
+
+            ```
+            const step1 = Math.random();
+            // 0.7501375029943995
+            const step2 = step1 * 10;
+            // 7.501375029943995
+            const step3 = Math.floor(step2);
+            // 7
+            const step4 = step3 + 1;
+            // 8
+            
+            Math.floor(Math.random() * 10) + 1;
+            // 8
+            ```
+
+            <img src="./images/math_number_03.jpg" alt="math_number_03">
+
+            - Explanations:
+                - Use *"Math.random()"* to generate a random *decimal* between 0 and 1.
+
+                    ```
+                    // 0.7501375029943995
+                    ```
+
+                - Multiply the decimal by 10 to get the decimals between 0 and 10 **not including** 10.
+
+                    ```
+                    Math.random() * 10
+                    // 7.501375029943995
+                    ```
+
+                - Use Math.floor() the whole thing to remove the decimal point without rounding up the number.
+
+                    ```
+                    Math.floor(Math.random() * 10)
+                    // 7
+                    ```
+
+                - Finally, add 1 to the Math.floor() to get the numbers between 1 **and** 10
+
+                    ```
+                    Math.floor(Math.random() * 10) + 1;
+                    // 2
+                    // 5
+                    // 7
+                    // 9
+                    // 3
+                    ```
+
+#### 11. typeof operator
+
+- Examples:
+
+    ```
+    typeof 'hello'; // 'string'
+    typeof 2; // 'number'
+    typeof true; // 'boolean'
+    
+    const mystery = '99 balloons';
+    typeof mystery; // 'string'
+    ```
+
+- Notice:
+    - "typeof" is an operator just like "+", you can use it without the parentheses.
+    - You only need one side for the "typeof" operator ```typeof [value]```<br>
+    instead of two sides for the "+" operator ```[value] + [value]```
+    - "null" is an object
+
+        ```
+        typeof null; // object
+        ```
+
+- Usage for functions:
+    - Check to see whether a user did pass in a number.
+    - A function has been called with a number and not a string.
+
+#### 12. parseInt & parseFloat
+- Definition: Use to parse strings into numbers, but watch out for NaN!
+- Examples:
+
+    ```
+    parseInt('24'); // 24
+    parseInt('24.987'); // 24
+    parseInt('28dayslater'); // 28
+    
+    parseFloat('24.987'); // 24.987
+    parseFloat('7'); // 7
+    parseFloat('i ate 3 shrimp'); // NaN
+    ```
+    **Note:**
+    - Neither do parseInt nor parseFloat like non-number/non-digit characters and they will throw in a "NaN"
+
+        ```
+        parseInt('$99'); // NaN
+        parseFloat('$99'); // NaN
+        parseInt('@9283745234cents'); // NaN
+        parseFloat('@9283745234cents'); // NaN
+        ```
+    
+    - But if your string contains a number at the beginning then you will get the number out of it
+
+        ```
+        parseInt('99cents'); // 99
+        ```
+    
+    - Also remember that if you use *parseInt* for a decimal value, that will also give a "NaN"
+
+        ```
+        parseInt('.9283745234cents'); // NaN
+        ```
+        You need to use *parseFloat* for a decimal (float) value
+        ```
+        parseFloat('.9283745234cents'); // 0.9283745234
+        ```
+
+- Conclusion: As long as it detects a valid digit, it will keep going until it can't go any further.
+
+    ```
+    parseInt('9283745234cents');
+    ```
+    Output:
+    ```
+    9283745234
+    ```
+    It can also deal with whitespace just fine
+    ```
+    parseInt('      9283745234cents');
+    ```
+    Output:
+    ```
+    9283745234
+    ```
