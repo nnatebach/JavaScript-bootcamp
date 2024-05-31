@@ -1,6 +1,7 @@
 ### Section 4: Controlling Program Logic and Flow
 #### 1. Making Decisions in JS
 #### 2. Comparison Operators
+#### 3. Double Equals (==)
 
 =============================
 
@@ -88,3 +89,69 @@
         Reason:
         
         <img src="./images/comparison_02.jpg" alt="comparison_02">
+
+#### 3. Double Equals (==)
+
+Addressing the equal(ity) signs
+
+```
+== // equality
+!= // not equal
+=== // strict equality
+!== // strict non-equality
+```
+
+- Double (==) vs. Triple (===) signs
+    - == (double equals):
+        - Checks for equality of *value*, but **not** equality of *type*.
+        - It *coerces* (converts) both values to the same type and then *compares* them directly *as one type*.
+        - This can lead to some unexpected results!
+        - Examples:
+            - Normal cases
+
+                ```
+                4 == 4; // true
+                'a' == 'a'; // true
+                false == false; // true
+                ```
+
+            - Odd/Unexpected cases
+
+                ```
+                5 == 5; // true
+                'b' == 'c'; // false
+                7 == '7'; // true
+                0 == ''; // true
+                true == false; // false
+                0 == false; // true
+                null == undefined; // true
+                ```
+
+                **Note:**
+                - ```7 == '7'``` are actually not equal.
+                These are different values and they are completely different in terms of JavaScript, yet double equal (==) will convert them to the same type and decides that they have the same value.
+                - Compare 0 (zero) to a string (to be explained more later)
+
+                    ```
+                    0 == ''; // true
+                    ```
+                    ```
+                    0 == 's'; // false
+                    ```
+
+                - Compare 0 (zero) to a Boolean (to be explained more later)
+
+                    ```
+                    0 == true; // false
+                    ```
+
+                    ```
+                    0 == false; // true
+                    ```
+
+                - Compare primitives
+
+                    ```
+                    null == undefined; // true
+                    ```
+                    These are two distinct values, two separate primitives but they are considered equal when we use two equal signs.
