@@ -166,3 +166,111 @@ let color = "lilac";
 if (color === "purple" || color === "lilac" || color === "violet") {
   console.log("GREAT CHOICE!!");
 }
+
+////////////////////// 13. NOT Operator(!)
+
+////// Example 1:
+
+let loggedInUser;
+
+// If there isn't a logged in user
+if (loggedInUser) {
+  console.log("There is a logged in user");
+} else {
+  console.log("There is no logged in user");
+}
+
+////// Example 2: Negate the condition for False result
+
+let flavor = "watermelon";
+
+if (!(flavor === "grape" || flavor === "cherry")) {
+  console.log("We do not have that flavor!");
+}
+
+////////////////////// 14. Operator Precedence
+
+////// Example 1:
+
+let x = 7;
+x == 7 || (x === 3 && x > 10); // true
+
+////// Example 2:
+
+let y = 7;
+y == 7 || (y === 3 && y > 10); // true
+
+////// Example 3:
+
+let z = 7;
+(z == 7 || z === 3) && z > 10; // false
+
+////////////////////// 15. The Switch Statement
+
+////// Example 1:
+
+let day = 2;
+
+switch (day) { // Tuesday
+  case 1:
+    console.log("Monday");
+    break;
+  case 2:
+    console.log("Tuesday");
+    break;
+  case 3:
+    console.log("Wednesday");
+    break;
+  case 4:
+    console.log("Thursday");
+    break;
+  case 5:
+    console.log("Friday");
+    break;
+  case 6:
+    console.log("Saturday");
+    break;
+  case 7:
+    console.log("Sunday");
+    break;
+}
+
+////// Example 2:
+
+let day2 = 2;
+
+switch(day) { // Wednesday, Thursday
+  case 1:
+      console.log('Monday');
+      console.log('Tuesday');
+      break;
+  case 2:
+      console.log('Wednesday');
+      console.log('Thursday');
+      break;
+  case 3:
+      console.log('Friday');
+      break;
+  case 4:
+      console.log('Saturday');
+      break;
+  case 5:
+      console.log('Sunday');
+      break;
+}
+
+////////////////////// 16. Conditional Ternary Operator
+
+////// Example 1:
+
+let status = "offline";
+let color1;
+color1 = status === "offline" ? "red" : "green";
+console.log(color1); // red
+
+////// Example 2:
+
+let status2 = "online";
+let color2;
+color2 = status === "online" ? "red" : "green";
+console.log(color2); // green

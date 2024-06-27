@@ -749,5 +749,397 @@ If nothing else was true, do this..."
         GREAT CHOICE!!
         ```
 
+#### 13. NOT Operator(!)
 
+- Definition: **!expression** return true if the expression is false
 
+    ```
+    !null // true
+    !(0 === 0) // false
+    !(3 <= 4) // false
+    ```
+
+    <img src="./images/NOT_operator_01.jpg" alt="NOT-operator-01">
+
+- Example 1: Checking whether or not a user is logged in.
+
+    Usually this is what you would do the old way
+
+    ```
+    let loggedInUser;
+
+    if (loggedInUser) {
+        console.log('There is a logged in user');
+    } else {
+        console.log('There is no logged in user');
+    }
+    ```
+
+    However, this code is for when you have the "otherwise" part.<br>
+    If you only want to check whether or not there is a logged in user and there is no otherwise part, you can use the "!expression" for the condition.
+
+    ```
+    let loggedInUser;
+
+    if (!loggedInUser) {
+        console.log('There is a logged in user');
+    }
+    ```
+
+    Everything is automatically evaluated to be "true" in the "if" condition.<br>
+
+    ```
+    if (loggedInUser)
+    ```
+
+    this means if "loggedInUser" is true.<br>
+    therefore, "if (!loggedInUser)" means that if "loggedInUser" is NOT true.<br>
+    and so you will not need the "else" or "otherwise" part for it.
+
+- Example 2: Negate the conditio using "!expression" with "||" instead of "&&" to check for False condition.<br>
+Same logic, same outcome just different way of writing thing.
+
+    - Using "&&"
+
+        ```
+        let flavor = 'watermelon';
+
+        if (flavour !== 'grape' && flavour !== 'cherry') {
+            console.log('We do not have that flavor!');
+        }
+        ```
+
+    - Using "||"
+
+        ```
+        let flavor = 'watermelon';
+
+        if (!(flavor === 'grape' || flavor === 'cherry')) {
+            console.log('We do not have that flavor!');
+        }
+        ```
+
+        Explanations:
+        - if flavor is 'grape' and flavor is NOT 'cherry'.
+        - flavor is 'grape' is True, flavor is NOT 'cherry' is False
+        - True || False => True
+        - !True is False
+
+- Demonstration
+
+    If the result is False, you are going to log out "We do not have that flavor!", otherwise you are not logging out anything (because this code is only to do something for the False case).
+
+    - False condition
+
+        <img src="./images/NOT_operator_02.jpg" alt="NOT-operator-02">
+    - True condition
+
+        <img src="./images/NOT_operator_03.jpg" alt="NOT-operator-03">
+
+#### 14. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_precedence">Operator Precedence</a>
+
+- Definition:
+
+    NOT (!) has higher precedence than && and ||<br>
+    && has higher precedence than ||
+
+    <img src="./images/operator_precedence_01.jpg" alt="operator_precedence">
+
+- Examples:
+
+    - Example 1:
+
+        ```
+        let x = 7;
+        x == 7 || x === 3 && x > 10
+        ```
+        - Output: true
+        - Explanation:
+            - x == 7 -> true
+            - x === 3 -> false
+            - x > 10 -> false
+            <br>
+
+            true || false || false -> true || false -> true
+
+            <br>
+
+            <img src="./images/operator_precedence_02.jpg" alt="operator_precedence">
+
+    - Example 2:
+
+        ```
+        let x = 7;
+        x == 7 || (x === 3 && x > 10)
+        ```
+        - Output: true
+        - Explanation:
+            - x == 7 -> true
+            - x === 3 -> false
+            - x > 10 -> false
+            <br>
+
+            true || (false && false) -> true || false -> true
+
+            <br>
+
+            <img src="./images/operator_precedence_03.jpg" alt="operator_precedence">
+
+    - Example 3:
+
+        ```
+        let x = 7;
+        (x == 7 || x === 3) && x > 10
+        ```
+        - Output: false
+        - Explanation:
+            - x == 7 -> true
+            - x === 3 -> false
+            - x > 10 -> false
+            <br>
+
+            (true || false) && false -> true && false -> false
+
+            <br>
+
+            <img src="./images/operator_precedence_04.jpg" alt="operator_precedence">
+
+#### 15. The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch">Switch</a> statement
+
+- Example: Print the correct day name for the number of day in the week
+
+    - Using "if else" statement (Old way)
+
+        ```
+        let day = 2;
+
+        if (day === 1) {
+            console.log('Monday');
+        } else if (day === 2) {
+            console.log('Tuesday');
+        } else if (day === 3) {
+            console.log('Wednesday');
+        } else if (day === 4) {
+            console.log('Thursday');
+        } else if (day === 5) {
+            console.log('Friday');
+        } else if (day === 6) {
+            console.log('Saturday');
+        } else if (day === 7) {
+            console.log('Sunday');
+        } else {
+            console.log('Invalid day!');
+        }
+        ```
+
+        Output: Tuesday
+
+    - Using "switch" statement
+
+        ```
+        let day = 2;
+
+        switch(day) {
+            case 1:
+                console.log('Monday');
+            case 2:
+                console.log('Tuesday');
+            case 3:
+                console.log('Wednesday');
+            case 4:
+                console.log('Thursday');
+            case 5:
+                console.log('Friday');
+            case 6:
+                console.log('Saturday');
+            case 7:
+                console.log('Sunday');
+        }
+        ```
+
+        - Output:
+
+            ```
+            Tuesday
+            Wednesday
+            Thursday
+            Friday
+            Saturday
+            Sunday
+            ```
+
+        - Demonstration
+
+        <img src="./images/switch_statement_01.jpg" alt="switch-statement-01">
+
+        - Problem: You have the "day" initialized with the value of 2, you only want to print out the day name in respective to that number 2 which is "Tuesday", but not only that it also prints out the other days that come after "Tuesday". What is wrong with this?
+        - Solution: If you only want one of those to run, you will need to add "break".
+
+            ```
+            let day = 2;
+
+            switch(day) {
+                case 1:
+                    console.log('Monday');
+                    break;
+                case 2:
+                    console.log('Tuesday');
+                    break;
+                case 3:
+                    console.log('Wednesday');
+                    break;
+                case 4:
+                    console.log('Thursday');
+                    break;
+                case 5:
+                    console.log('Friday');
+                    break;
+                case 6:
+                    console.log('Saturday');
+                    break;
+                case 7:
+                    console.log('Sunday');
+                    break;
+            }
+            ```
+
+            Output:
+
+            ```
+            Tuesday
+            ```
+
+        - Demonstration
+
+        <img src="./images/switch_statement_02.jpg" alt="switch-statement-02">
+
+      - In conclusion: You need to <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/break">break</a> in the "switch" statement, otherwise the program will print/execute anything as the result from the matching case and beyond.
+
+- Example 2: Multiple results for the same case
+
+    ```
+    let day = 2;
+
+    switch(day) {
+        case 1:
+            console.log('Monday');
+            console.log('Tuesday');
+            break;
+        case 2:
+            console.log('Wednesday');
+            console.log('Thursday');
+            break;
+        case 3:
+            console.log('Friday');
+            break;
+        case 4:
+            console.log('Saturday');
+            break;
+        case 5:
+            console.log('Sunday');
+            break;
+    }
+    ```
+
+    - Output:
+
+        ```
+        Wednesday
+        Thursday
+        ```
+
+    - Demonstrations
+
+    <img src="./images/switch_statement_03.jpg" alt="switch-statement-03">
+
+    <img src="./images/switch_statement_04.jpg" alt="switch-statement-04">
+
+- In summary, you need to "break" in your "switch" statement, otherwise the program is going to run from the matching case until end of the "switch" statement.
+
+#### 16. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator">Conditional Ternary Operator</a>
+
+- Definition:
+    - It is a one-liner of the "if else" statement.
+    - It is called "ternary" because there are three pieces instead of binary.
+
+- Syntax
+
+    ```
+    condition ? exprIfTrue : exprIfFalse
+    ```
+
+    - ```condition```: An expression whose value is used as a condition.
+    - ```exprIfTrue```: An expression which is executed if the condition evaluates to a truthy value (one which equals or can be converted to true).
+    - ```exprIfFalse```: An expression which is executed if the condition is falsy (that is, has a value which can be converted to false).
+
+- Example 1:
+    - "if else" statement
+
+        ```
+        let num = 7;
+
+        if (num === 7) {
+            console.log('Lucky');
+        } else {
+            console.log('Bad');
+        }
+        ```
+
+        Output: Lucky
+
+    - Ternary operator
+
+        ```
+        num === 7 ? console.log('Lucky') : console.log('Bad')
+        ```
+
+        Output: Lucky
+
+- Example 2:
+    - "if else" statement
+
+        ```
+        let status = 'offline';
+
+        let color;
+        if (status = 'offline') {
+            color = 'red';
+        } else {
+            color = 'green';
+        }
+        ```
+
+        - Output: ```'red'```
+        - Demonstration
+
+        <img src="./images/ternary_operator_01.jpg" alt="ternary-operator-01">
+
+    - Ternary operator
+
+        ```
+        let status = 'offline';
+
+        let color = status === 'offline' ? 'red' : 'green';
+        ```
+        ```
+        color
+        ```
+
+        - Output: ```'red'```
+
+        - Explanations
+            - Step 1: You have a variable called **status** with a value of *offline*
+
+                ```
+                let status = offline
+                ```
+
+            - Step 2: You have a variable called **color**, the value of the variable color will *depend* on the value of the variable **status**
+                - if status === offline => the value of color will be 'red'.
+                - if status === online => the value of color will be 'green'.
+
+        - Demonstration:
+
+        <img src="./images/ternary_operator_02.jpg" alt="ternary-operator-02">
+
+        <img src="./images/ternary_operator_03.jpg" alt="ternary-operator-03">
