@@ -8,6 +8,14 @@
 #### 6. If Statements
 #### 7. Else If
 #### 8. Else
+#### 9. Nesting Conditionals
+#### 10. <a href="https://developer.mozilla.org/en-US/docs/Glossary/Truthy">Truthy</a> and <a href="https://developer.mozilla.org/en-US/docs/Glossary/Falsy">Falsy</a> Values
+#### 11. LOGICAL AND (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND">&&</a>)
+#### 12. LOGICAL OR (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR">||</a>)
+#### 13. NOT Operator(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_NOT">!</a>)
+#### 14. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_precedence">Operator Precedence</a>
+#### 15. The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch">Switch</a> statement
+#### 16. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator">Conditional Ternary Operator</
 
 =============================
 
