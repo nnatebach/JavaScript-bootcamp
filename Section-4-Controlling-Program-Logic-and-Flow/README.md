@@ -1110,7 +1110,7 @@ Same logic, same outcome just different way of writing thing.
         let status = 'offline';
 
         let color;
-        if (status = 'offline') {
+        if (status === 'offline') {
             color = 'red';
         } else {
             color = 'green';
