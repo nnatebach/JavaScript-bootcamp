@@ -87,6 +87,78 @@
         - Usually the data within the array is relatively cohesive, the array of different data types above is for the demonstration purpose.
         - JavaScript allows a mix-up of different data types in the array which some other programming languages don't allow.
 
+#### 2. Array Indices
 
+- Arrays are indexed
 
+    <img src="./images/array_indices_01.jpg" alt="array-indices-01">
 
+- Example:
+
+    ```
+    let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+    ```
+
+    <img src="./images/array_indices_02.jpg" alt="array-indices-02">
+
+    ```
+    colors[0]; // 'red' - 1st element
+    colors[1]; // 'orange' - 2nd element
+    colors[3]; // 'green' - 4th element
+    colors[6]; // 'violet' - last element
+    ```
+
+    <img src="./images/array_indices_03.jpg" alt="array-indices-03">
+
+- Print the value of the last element in the array
+    - Solution 1: Using the index
+
+        The length of the array is 7
+
+        ```
+        colors.length; // 7
+        ```
+
+        This means there are 7 elements in the array.<br>
+        However, if you want to print out the value of the 7th element (last element) you will have to print out the value of the 6th index.
+
+        ```
+        colors[6]; // violet
+        ```
+
+        Reason: The array starts at index 0, the first element of the array is at index 0, therefore if there are 7 elements in the array then the last element is at index 6.<br>
+
+    - Solution 2: Using the array length
+
+        As you already know, the length of the array is 7.<br>
+        If you subtract that number by 1 then you will have the index of the last element in the array
+
+        ```
+        colors[colors.length - 1]; // violet
+        ```
+
+        <img src="./images/array_indices_04.jpg" alt="array-indices-04">
+
+    - Note: If you try to access any non-existed element with a non-existed index in the array, the returned value is going to be "undefined".
+
+        ```
+        colors[7]; // undefined
+        colors[123]; // undefined
+        ```
+
+        <img src="./images/array_indices_05.jpg" alt="array-indices-05">
+
+- Strings
+
+    Similar to arrays, strings are also indexed.<br>
+    If you try to print out the value of a non-existed element, the returned value will be "undefined".
+
+    ```
+    'string'.length; // 6
+    'string'[0]; // 's'
+    'string'[5]; // 'g'
+    'string'[6]; // undefined
+    'string'[123]; // undefined
+    ```
+
+    <img src="./images/array_indices_06.jpg" alt="array-indices-06">
