@@ -218,19 +218,21 @@
 
 #### 4. Push and Pop
 
-Given the array
+- push and pop are for adding and removing array elements.
 
-```
-let topSongs = ['First Time Ever I Saw Your Face', 'God Only Knows', 'A Day In The Life', 'Life On Mars'];
-```
+- Given the array
 
-This is the array of 4 elements.
+    ```
+    let topSongs = ['First Time Ever I Saw Your Face', 'God Only Knows', 'A Day In The Life', 'Life On Mars'];
+    ```
 
-You can also check for the length of the array with
+    This is the array of 4 elements.
 
-```
-topSongs.length;
-```
+    You can also check for the length of the array with "length"
+
+    ```
+    topSongs.length;
+    ```
 
 <img src="./images/push_pop_01.jpg" alt="push-pop-01">
 
@@ -240,23 +242,28 @@ topSongs.length;
     topSongs.push('Fortunate Son');
     ```
 
-    After adding 'Fortunate Son' to the array you can see that the console logs a number below the "push" method
+    - After adding 'Fortunate Son' to the array you can see that the console logs a number below the "push" method
 
     <img src="./images/push_pop_02.jpg" alt="push-pop-02">
 
-    That number is the new length of the array after you added the new elements to it.
+    - That number is the new length of the array after you added the new elements to it.
 
     <img src="./images/push_pop_03.jpg" alt="push-pop-03">
 
     **Review:** Arrays are mutable which means it CAN be changed.
 
-    The number is called the "return value", the "return value" and "return function" will be talked more in the future lessons.
+    - The number is called the "return value", the "return value" and "return function" will be talked more in the future lessons.
+    - **Notice:**
+        - You can add multiple elements to the array all at once.
+        - The orders of the array elements (fork, knife) will be exactly the same with the orders you added them.
+
+        <img src="./images/push_pop_04.jpg" alt="push-pop-06">
 
 - Pop: Remove the element at the end of the array.
 
     This is the array you are having, the current length of the array is 5
 
-    <img src="./images/push_pop_04.jpg" alt="push-pop-04">
+    <img src="./images/push_pop_05.jpg" alt="push-pop-05">
 
     "Pop" will remove the last element in the array (the element at the end of the array).
 
@@ -266,10 +273,42 @@ topSongs.length;
 
     The element to be removed will be shown on the line below ```topSongs.pop();``` and when you input the array name you will see the current length and elements in the array
 
-    <img src="./images/push_pop_05.jpg" alt="push-pop-05">
+    <img src="./images/push_pop_06.jpg" alt="push-pop-06">
 
 - The differences between "push" and "pop"
     - **push** is for *adding*, **pop** is for *removing* an element at the **end of the array**.
     - You will have to *specify* the element you want to **push** into the array (obviously!) while you can just pop an element out of the array without specifying the element. As you pop all the elements out of the array, you are left with "undefined" value.
 
-        <img src="./images/push_pop_06.jpg" alt="push-pop-06">
+    <img src="./images/push_pop_07.jpg" alt="push-pop-07">
+
+#### 5. Unshift and Shift
+
+- Similar to push and pop, **unshift** and **shift** are for adding and removing elements to the array
+    - **unshift** is for **adding** element(s) to the *beginning* of the array. You will need to specify what you want to add to the array (same with push).
+    - **shift** is for **removing** element(s) from the *beginning* of the array. You will NOT need to specify what you want to remove from the array (same with pop), shift will always start from the first element in the array.
+
+- Unshift
+    - Adding single element to the array: Notice that the element will be added to the BEGINNING of the array.
+
+        ```
+        let dishesToDo = ['big platter'];
+        dishesToDo.unshift('large plate');
+        dishesToDo.unshift('small platter');
+        dishesToDo; // ['small plate', 'large plate', 'big platter'];
+        ```
+
+        <img src="./images/unshift_shift_01.jpg" alt="unshift-shift-01">
+
+    - Similar to "push", you can add *multiple elements* to the array with **unshift**
+        Pay attention that because 'unshift' will ONLY add element to the BEGINNING of the array, therefore the order when you add single versus multiple elements to the array will be backward with how the elements are added to the array.
+
+        <img src="./images/unshift_shift_02.jpg" alt="unshift-shift-02">
+
+        <img src="./images/unshift_shift_03.jpg" alt="unshift-shift-03">
+
+- Shift
+
+    - Similar to "pop", **shift** is for removing element BUT at the BEGINNING of the array.
+    - When you remove all the elements in the array you will be left with "undefined" values.
+
+    <img src="./images/unshift_shift_04.jpg" alt="unshift-shift-04">
