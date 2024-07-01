@@ -70,3 +70,22 @@ shoppingList1; // ['Cheddar Cheese', 'Whole Milk', 'Ice Cream']
 
 shoppingList1[shoppingList1.length] = 'tomatoes';
 shoppingList1[shoppingList1.length] = 'potatoes';
+
+///////////////////// 4. Push and Pop
+
+//////////// Given the array
+
+let topSongs = ['First Time Ever I Saw Your Face', 'God Only Knows', 'A Day In The Life', 'Life On Mars'];
+
+//////////// Push
+
+topSongs.push('Fortunate Son'); // added to the array
+// topSongs; // ['First Time Ever I Saw Your Face', 'God Only Knows', 'A Day In The Life', 'Life On Mars', 'Fortunate Son']
+
+//////////// Pop
+topSongs.pop(); // 'Fortunate Son' - removed from the array
+// topSongs.pop(); // 'Life On Mars'
+// topSongs.pop(); // 'A Day In The Life'
+// topSongs.pop(); // 'God Only Knows'
+// topSongs.pop(); // 'First Time Ever I Saw Your Face' - Last element in the array
+// topSongs.pop(); // undefined

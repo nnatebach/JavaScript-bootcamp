@@ -215,3 +215,61 @@
               ```
 
               <img src="./images/modifying_arrays_06.jpg" alt="modifying-arrays-06">
+
+#### 4. Push and Pop
+
+Given the array
+
+```
+let topSongs = ['First Time Ever I Saw Your Face', 'God Only Knows', 'A Day In The Life', 'Life On Mars'];
+```
+
+This is the array of 4 elements.
+
+You can also check for the length of the array with
+
+```
+topSongs.length;
+```
+
+<img src="./images/push_pop_01.jpg" alt="push-pop-01">
+
+- Push: Add the element to the end of the array.
+
+    ```
+    topSongs.push('Fortunate Son');
+    ```
+
+    After adding 'Fortunate Son' to the array you can see that the console logs a number below the "push" method
+
+    <img src="./images/push_pop_02.jpg" alt="push-pop-02">
+
+    That number is the new length of the array after you added the new elements to it.
+
+    <img src="./images/push_pop_03.jpg" alt="push-pop-03">
+
+    **Review:** Arrays are mutable which means it CAN be changed.
+
+    The number is called the "return value", the "return value" and "return function" will be talked more in the future lessons.
+
+- Pop: Remove the element at the end of the array.
+
+    This is the array you are having, the current length of the array is 5
+
+    <img src="./images/push_pop_04.jpg" alt="push-pop-04">
+
+    "Pop" will remove the last element in the array (the element at the end of the array).
+
+    ```
+    topSongs.pop();
+    ```
+
+    The element to be removed will be shown on the line below ```topSongs.pop();``` and when you input the array name you will see the current length and elements in the array
+
+    <img src="./images/push_pop_05.jpg" alt="push-pop-05">
+
+- The differences between "push" and "pop"
+    - **push** is for *adding*, **pop** is for *removing* an element at the **end of the array**.
+    - You will have to *specify* the element you want to **push** into the array (obviously!) while you can just pop an element out of the array without specifying the element. As you pop all the elements out of the array, you are left with "undefined" value.
+
+        <img src="./images/push_pop_06.jpg" alt="push-pop-06">
