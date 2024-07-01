@@ -49,3 +49,24 @@ colors[123]; // undefined
 'string'[5]; // 'g'
 'string'[6]; // undefined
 'string'[123]; // undefined
+
+///////////////////// 3. Modifying Arrays
+
+let shoppingList1 = ['Cheddar Cheese', '2% Milk'];
+
+//////////// Changing element
+
+shoppingList1[1] = 'Whole Milk';
+shoppingList1; // ['Cheddar Cheese', 'Whole Milk']
+
+//////////// Adding element
+
+//// Using index
+
+shoppingList1[2] = 'Ice Cream';
+shoppingList1; // ['Cheddar Cheese', 'Whole Milk', 'Ice Cream']
+
+//// Using the length of the array
+
+shoppingList1[shoppingList1.length] = 'tomatoes';
+shoppingList1[shoppingList1.length] = 'potatoes';
