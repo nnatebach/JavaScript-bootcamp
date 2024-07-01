@@ -167,52 +167,51 @@
 
 <img src="./images/modifying_arrays_01.jpg" alt="modifying-arrays-01">
 
-- Mutability
+- **Strings** are **immutable**
 
-    - **Strings** are **immutable**
+    <img src="./images/modifying_arrays_02.jpg" alt="modifying-arrays-02">
 
-        <img src="./images/modifying_arrays_02.jpg" alt="modifying-arrays-02">
+- **Arrays** are **mutable**
 
-    - **Arrays** are **mutable**
+    - Example:
+    Given the array:
 
-        - Example:
+        ```
+        let shoppingList = ['Cheddar Cheese', '2% Milk'];
+        ```
 
-            ```
-            let shoppingList = ['Cheddar Cheese', '2% Milk'];
-            ```
+        <img src="./images/modifying_arrays_03.jpg" alt="modifying-arrays-03">
 
-            <img src="./images/modifying_arrays_03.jpg" alt="modifying-arrays-03">
+      **Note:** The array name 'shoppingList' in the screenshot and the array name 'shoppingList1' for the examples in this lesson are the same thing. Since 'shoppingList' was already declared in the examples in the last lessons, the code above, so you will need a different name for the array in this lesson.
 
-            **Note:** The array name 'shoppingList' in the screenshot and the array name 'shoppingList1' for the examples in this lesson are the same thing. Since 'shoppingList' was already declared in the examples in the last lessons, the code above, so you will need a different name for the array in this lesson.
+    - Change '2% Milk' to 'Whole Milk'
 
-            - Change '2% Milk' to 'Whole Milk'
+        ```
+        shoppingList[1] = 'Whole Milk'
+        ```
+
+        <img src="./images/modifying_arrays_04.jpg" alt="modifying-arrays-04">
+
+    - Adding element to the end of the array
+        - Using index
+            - The current length of the array is 2, the last index is 1.
+            - You can add more element to the array using index 2.
 
                 ```
-                shoppingList[1] = 'Whole Milk'
+                shoppingList[2] = 'Ice Cream';
                 ```
 
-                <img src="./images/modifying_arrays_04.jpg" alt="modifying-arrays-04">
+                <img src="./images/modifying_arrays_05.jpg" alt="modifying-arrays-05">
 
-            - Adding element to the end of the array
-                - Using index
-                    - The current length of the array is 2, the last index is 1.
-                    - You can add more element to the array using index 2.
+                Note: This is only applicable if you know the number of elements in the array, therefore it might be inconvenient at times.<br>
+                In case if you have no idea how many elements are there in the array, you will need to add the element using the length of the array.
 
-                        ```
-                        shoppingList[2] = 'Ice Cream';
-                        ```
+          - Using array length
 
-                        <img src="./images/modifying_arrays_05.jpg" alt="modifying-arrays-05">
+              For example you want to add 'tomatoes' to the end of the array 'shoppingList' but you don't know how many elements there are in the array:
 
-                        Note: This is only applicable if you know the number of elements in the array.<br>
-                        In case if you have no idea how many elements are there in the array, you will need to add the element using the length of the array.
+              ```
+              shoppingList[shoppingList.length] = 'tomatoes';
+              ```
 
-                - Using array length
-
-                    For example you want to add 'tomatoes' to the end of the array 'shoppingList' but you don't know how many elements there are in the array:
-
-                    ```
-                    shoppingList[shoppingList.length] = 'tomatoes';
-                    ```
-
-                    <img src="./images/modifying_arrays_06.jpg" alt="modifying-arrays-06">
+              <img src="./images/modifying_arrays_06.jpg" alt="modifying-arrays-06">
