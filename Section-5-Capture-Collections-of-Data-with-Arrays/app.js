@@ -116,3 +116,64 @@ dishesToDo.shift(); // 'fork'
 dishesToDo.shift(); // 'knife'
 dishesToDo.shift(); // 'big platter'
 dishesToDo.shift(); // undefined
+
+///////////////////// 6. Concat
+
+//////////// Example 1
+
+let fruits = ['apple', 'banana'];
+let veggies = ['asparagus', 'brussel sprouts'];
+console.log(fruits.concat(veggies)); // ['apple', 'banana', 'asparagus', 'brussel sprouts']
+
+//////////// Example 2
+
+console.log(veggies.concat(fruits)); // ['asparagus', 'brussel sprouts', 'apple', 'banana']
+
+//////////// Example 3
+
+let meats = ['steak', 'chicken breast'];
+
+let allFood = fruits.concat(veggies, meats);
+console.log(allFood);
+
+//////////// Original arrays
+
+console.log(fruits); // ['apple', 'banana'];
+console.log(veggies); // ['asparagus', 'brussel sprouts'];
+console.log(meats); // ['steak', 'chicken breast'];
+
+///////////////////// 7. Includes and IndexOf
+
+//////////// Includes
+
+//// Example 1:
+
+let ingredients = ['water', 'corn starch', 'flour', 'cheese', 'brown sugar', 'shrimp', 'eel', 'butter'];
+
+ingredients.includes('fish'); // false
+ingredients.includes('shrimp'); // true
+ingredients.includes('corn'); // false
+
+//// Example 2: fromIndex - specify where to start searching from
+
+ingredients.includes('water', 3); // false
+ingredients.includes('water'); // true
+ingredients.includes('water', 0); // true
+
+//// Example 3:
+
+if (ingredients.includes('flour')) { // true
+  console.log('I AM GLUTEN FREE, I CANNOT EAT THAT!');
+}
+
+//////////// indexOf
+
+//// Example 1:
+
+ingredients.indexOf('eel'); // 6
+ingredients.indexOf('Maple Syrup'); // -1
+
+//// Example 2: fromIndex - specify where to start searching from
+
+ingredients.indexOf('cheese', 5); // -1
+ingredients.indexOf('cheese', 2); // 3

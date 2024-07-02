@@ -312,3 +312,175 @@
     - When you remove all the elements in the array you will be left with "undefined" values.
 
     <img src="./images/unshift_shift_04.jpg" alt="unshift-shift-04">
+
+#### 6. Concat
+
+- Concat:
+  - merges two or more arrays.
+  - creates a new array by combining the small arrays.
+  - does NOT mutate or update the original arrays.
+
+- Syntax
+
+    ```
+    concat()
+    concat(value1)
+    concat(value1, value2)
+    concat(value1, value2, /* …, */ valueN)
+    ```
+
+- Example 1:
+
+    ```
+    let fruits = ['apple', 'banana'];
+    let veggies = ['asparagus', 'brussel sprouts'];
+    console.log(fruits.concat(veggies));
+    ```
+
+    <img src="./images/concat_01.jpg" alt="concat-01">
+
+- Example 2:
+
+    ```
+    let fruits = ['apple', 'banana'];
+    let veggies = ['asparagus', 'brussel sprouts'];
+    console.log(veggies.concat(fruits));
+    ```
+
+    <img src="./images/concat_02.jpg" alt="concat-02">
+
+- Example 3:
+
+    ```
+    let fruits = ['apple', 'banana'];
+    let veggies = ['asparagus', 'brussel sprouts'];
+    let meats = ['steak', 'chicken breast'];
+
+    let allFood = fruits.concat(veggies, meats);
+    ```
+
+    <img src="./images/concat_03.jpg" alt="concat-03">
+
+- The original arrays are NOT mutated / updated
+
+    ```
+    console.log(fruits);
+    console.log(veggies);
+    console.log(meats);
+    ```
+
+    <img src="./images/concat_04.jpg" alt="concat-04">
+
+#### 7. Includes and IndexOf
+
+- Includes
+    - Definition:
+        - Known as a boolean method (true/false)
+        - It takes a value and tells you if the array includes that value or not.
+
+    - Example 1:
+
+        - Syntax:
+
+            ```
+            includes(searchElement)
+            ```
+
+        - Code
+
+            ```
+            let ingredients = ['water', 'corn starch', 'flour', 'cheese', 'brown sugar', 'shrimp', 'eel', 'butter'];
+            ```
+
+            ```
+            ingredients.includes('fish');
+            ingredients.includes('shrimp');
+            ingredients.includes('corn');
+            ```
+
+            <img src="./images/includes_indexof_01.jpg" alt="includes-indexof-01">
+
+        - Reasons:
+            - Neither 'fish' nor 'corn' exist in the array.
+            - 'shrimp' DOES exist in the array.
+        - Note: There is 'corn starch' in the array yet 'corn' and 'corn starch' are NOT the same thing.
+
+    - Example 2:
+
+        - Syntax:
+
+            ```
+            includes(searchElement, fromIndex)
+            ```
+            'fromIndex'specifies at which index to start searching from in the array.
+
+        - Code
+
+            ```
+            ingredients.includes('water', 3); // false
+            ingredients.includes('water'); // true
+            ingredients.includes('water', 0); // true
+            ```
+
+            <img src="./images/includes_indexof_02.jpg" alt="includes-indexof-02">
+
+            - Reasons: This is the array ['water', 'corn starch', 'flour', 'cheese', 'brown sugar', 'shrimp', 'eel', 'butter']
+                - ```ingredients.includes('water', 3)``` starts to look for 'water' from the 3rd index, however there is NO value of 'water' from the 3rd index to the end of the array. Therefore, this returns 'false'.
+                - ```ingredients.includes('water')```, the value 'water' IS included within the 'ingredients' array, therefore this returns 'true'.
+                - ```ingredients.includes('water', 0)```, starting from index 0 in the array, the value 'water' is also at index 0, therefore this returns 'true'.
+
+    - Example 3:
+
+        ```
+        if (ingredients.includes('flour')) { // true
+          console.log('I AM GLUTEN FREE, I CANNOT EAT THAT!');
+        }
+        ```
+
+        <img src="./images/includes_indexof_03.jpg" alt="includes-indexof-03">
+
+- IndexOf
+    - Definition:
+        - Similar to 'indexOf' method for Strings.
+        - This returns the index of the array element if the element does exist, otherwise it returns '-1'.
+    - Example 1:
+        - Syntax:
+
+            ```
+            indexOf(searchElement)
+            ```
+
+        - Code
+
+            ```
+            ingredients.indexOf('eel'); // 6
+            ingredients.indexOf('Maple Syrup'); // -1
+            ```
+
+            <img src="./images/includes_indexof_04.jpg" alt="includes-indexof-04">
+
+            - Element 'eel' exists in the array at index '6'.
+            - Element 'Maple Syrup' does NOT exist in the array, therefore index '-1'
+
+    - Example 2:
+        - Syntax:
+
+            ```
+            indexOf(searchElement, fromIndex)
+            ```
+            'fromIndex'specifies at which index to start searching from in the array.
+
+        - Code
+
+            ```
+            ingredients.indexOf('cheese', 5); // -1
+            ingredients.indexOf('cheese', 2); // 3
+            ```
+
+            <img src="./images/includes_indexof_05.jpg" alt="includes-indexof-05">
+
+- In summary, if you only need to check whether an element exists or not in the array without the specific location then you can just use 'includes'.
+
+
+
+
