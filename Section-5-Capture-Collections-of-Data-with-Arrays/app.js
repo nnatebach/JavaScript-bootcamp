@@ -200,3 +200,30 @@ letters.reverse().join(' - '); // 'T - C - E - P - S - E - R'
 [12.3, 60, false].join(); // '12.3,60,false'
 
 [12.3, 60, false].join(' # -> '); // '12.3 # -> 60 # -> false'
+
+///////////////////// 9. Slice
+
+let animals = ['shark', 'salmon', 'whale', 'bear', 'lizard', 'tortoise'];
+
+//////////// positive value slice forward
+
+let swimmers = animals.slice(0, 3); // ['shark', 'salmon', 'whale']
+
+let mammals = animals.slice(2, 4); // ['whale', 'bear']
+
+let reptiles = animals.slice(4, 6); // ['lizard', 'tortoise']
+
+// let reptiles = animals.slice(4); // ['lizard', 'tortoise']
+
+//////////// negative value slice backward
+
+let quadruped = animals.slice(-3); // ['bear', 'lizard', 'tortoise']
+// let quadruped = animals.slice(-3, -1); // ['bear', 'lizard']
+
+//////////// Trick for making a copy of an array
+
+animals.slice(); // ['shark', 'salmon', 'whale', 'bear', 'lizard', 'tortoise']
+// this does NOT impact the original array, it just makes a new array
+
+let copy = animals.slice();
+// now you have two versions of the array, 'copy' and 'animals'

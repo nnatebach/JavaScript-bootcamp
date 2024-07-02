@@ -483,8 +483,6 @@
 
 #### 8. Reverse and Join
 
-#### 8. Reverse and Join
-
 - Reverse
     - Definition:
         - Reverses an array *in place* which means it mutates the original array.
@@ -548,8 +546,83 @@
 
         <img src="./images/reverse_join_08.jpg" alt="reverse-join-08">
 
+#### 9. Slice
 
+- Array.prototype.slice()
+    - Similar to Strings slice method
+    - takes a portion of an array and makes a new array with it
+    - it does NOT impact the original array
 
+- Example:
+    - Given the array
 
+        ```
+        let animals = ['shark', 'salmon', 'whale', 'bear', 'lizard', 'tortoise'];
+        ```
 
+    - Positive value slice forward
 
+        ```
+        let swimmers = animals.slice(0, 3);
+        ```
+
+        starts from 0, ends BEFORE 3 (ends at 2)
+
+        <img src="./images/slice_01.jpg" alt="slice-01">
+
+        ```
+        let mammals = animals.slice(2, 4);
+        ```
+
+        starts from 2, ends BEFORE 4 (ends at 3)
+
+        <img src="./images/slice_02.jpg" alt="slice-02">
+
+        ```
+        let reptiles = animals.slice(4, 6);
+        ```
+
+        starts from 4, ends BEFORE 6 (ends at 5)
+        **Notes:**
+        - Even though the highest index is 5, you can use index 6 for the end point because slice is not going to take the ending index.
+        - slice(4, 10); will also give the same results even though there is no index 10 in the array.
+
+        <img src="./images/slice_03.jpg" alt="slice-03">
+
+        ```
+        let reptiles = animals.slice(4);
+        ```
+
+        This slice will take all elements starting from index 4 to end of the array.
+
+        <img src="./images/slice_03.jpg" alt="slice-03">
+
+    - Negative value slice backward
+
+        ```
+        let quadruped = animals.slice(-3);
+        ```
+
+        <img src="./images/slice_04.jpg" alt="slice-03">
+
+        ```
+        let quadruped = animals.slice(-3, -1);
+        ```
+
+        <img src="./images/slice_05.jpg" alt="slice-05">
+
+- Trick for making a copy of an array
+
+    ```
+    animals.slice();
+    ```
+
+    This does NOT impact the original array, it just makes a new array
+
+    ```
+    let copy = animals.slice();
+    ```
+
+    Now you have two versions of the array, 'copy' and 'animals'
+
+    <img src="./images/slice_07.jpg" alt="slice-07">
