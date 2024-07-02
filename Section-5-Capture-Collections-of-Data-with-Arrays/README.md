@@ -481,6 +481,75 @@
 
 - In summary, if you only need to check whether an element exists or not in the array without the specific location then you can just use 'includes'.
 
+#### 8. Reverse and Join
+
+#### 8. Reverse and Join
+
+- Reverse
+    - Definition:
+        - Reverses an array *in place* which means it mutates the original array.
+        - The array can be of different types.
+
+    - Examples:
+
+        ```
+        let letters = ['T', 'C', 'E', 'P', 'S', 'E', 'R'];
+        letters.reverse();
+        ```
+
+        <img src="./images/reverse_join_01.jpg" alt="reverse-join-01">
+
+        ```
+        [1, true, 123, 'dsd'].reverse();
+        ```
+
+        <img src="./images/reverse_join_02.jpg" alt="reverse-join-02">
+
+- Join
+    - Definition:
+        - creates and returns a new string by concatenating all of the elements in this array.
+        - separated by commas by default (or to be specified).
+
+    - Examples:
+
+        ```
+        letters.join();
+        ```
+
+        <img src="./images/reverse_join_03.jpg" alt="reverse-join-03">
+
+        ```
+        letters.join(' & ');
+        ```
+
+        <img src="./images/reverse_join_04.jpg" alt="reverse-join-04">
+
+        ```
+        letters.reverse().join(' . ');
+        ```
+
+        <img src="./images/reverse_join_05.jpg" alt="reverse-join-05">
+
+        ```
+        letters.reverse().join(' - ');
+        ```
+
+        <img src="./images/reverse_join_06.jpg" alt="reverse-join-06">
+
+        ```
+        [12.3, 60, false].join();
+        ```
+
+        <img src="./images/reverse_join_07.jpg" alt="reverse-join-07">
+
+        ```
+        [12.3, 60, false].join(' # -> ');
+        ```
+
+        <img src="./images/reverse_join_08.jpg" alt="reverse-join-08">
+
+
+
 
 
 

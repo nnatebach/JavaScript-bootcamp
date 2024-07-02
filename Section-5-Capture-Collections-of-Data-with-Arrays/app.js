@@ -177,3 +177,26 @@ ingredients.indexOf('Maple Syrup'); // -1
 
 ingredients.indexOf('cheese', 5); // -1
 ingredients.indexOf('cheese', 2); // 3
+
+///////////////////// 8. Reverse and Join
+
+//////////// Reverse
+
+let letters = ['T', 'C', 'E', 'P', 'S', 'E', 'R'];
+// letters.reverse(); // ['R', 'E', 'S', 'P', 'E', 'C', 'T']
+
+[1, true, 123, 'dsd'].reverse(); // ['dsd', 123, true, 1]
+
+//////////// Join
+
+letters.join(); // ['R', 'E', 'S', 'P', 'E', 'C', 'T']
+
+letters.join(' & '); // 'T & C & E & P & S & E & R'
+
+letters.reverse().join(' . '); // 'R . E . S . P . E . C . T'
+
+letters.reverse().join(' - '); // 'T - C - E - P - S - E - R'
+
+[12.3, 60, false].join(); // '12.3,60,false'
+
+[12.3, 60, false].join(' # -> '); // '12.3 # -> 60 # -> false'
