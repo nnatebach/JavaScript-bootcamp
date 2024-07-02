@@ -95,4 +95,24 @@ topSongs.pop(); // 'Fortunate Son' - removed from the array
 
 //////////// Unshift
 
+//////// Sample ['fork', 'knife', 'big platter']
+
+//// Single element
+
 let dishesToDo = ['big platter'];
+dishesToDo.unshift('knife');
+dishesToDo.unshift('fork');
+// dishesToDo; // ['fork', 'knife', 'big platter']
+
+//// Multiple element
+
+let dishesToDo2 = ['big platter'];
+dishesToDo2.unshift('fork', 'knife');
+// dishesToDo2; // ['fork', 'knife', 'big platter']
+
+//////////// Shift
+
+dishesToDo.shift(); // 'fork'
+dishesToDo.shift(); // 'knife'
+dishesToDo.shift(); // 'big platter'
+dishesToDo.shift(); // undefined
