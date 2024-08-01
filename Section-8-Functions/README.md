@@ -20,20 +20,20 @@ Methods:
 
     Math.random() * 6
 
-    ![./images/dice_roll_01.jpg](Dice%20Roll%20function%205679caabeb7044d8af3ad23a5db0282a/dice_roll_01.jpg)
+    ![dice_roll_01.jpg](./images/dice_roll_01.jpg)
 
 - [Math.floor()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor)
     - rounds down and returns the largest integer less than or equal to a given number ⇒ remove the decimal part.
     - Math.floor(Math.random() * 6)
 
-        ![./images/dice_roll_02.jpg](Dice%20Roll%20function%205679caabeb7044d8af3ad23a5db0282a/dice_roll_02.jpg)
+        ![dice_roll_02.jpg](./images/dice_roll_02.jpg)
 
     - Math.floor(Math.random() * 6) + 1 ⇒ Why adding 1?
 
         Add “1” into “Math.floor()” because you want the values from 1 to 6 (there is no zero value in the dice)
 
 
-    ![./images/dice_roll_03.jpg](Dice%20Roll%20function%205679caabeb7044d8af3ad23a5db0282a/dice_roll_03.jpg)
+    ![dice_roll_03.jpg](./images/dice_roll_03.jpg)
 
 ### Arguments (inputs)
 
@@ -47,7 +47,7 @@ function rollDice() {
 rollDice(); // the code runs once
 ```
 
-![arguments_01.jpg](Arguments%20(inputs)%20c43e8f60005a41c3afc4c2f12721c013/arguments_01.jpg)
+![arguments_01.jpg](./images/arguments_01.jpg)
 
 *Calling "rollDice" multiple times by repeating the function*
 
@@ -64,7 +64,7 @@ function throwDice () { // zero argument
 // throwDice(); // the code runs 6 times
 ```
 
-![arguments_02.jpg](Arguments%20(inputs)%20c43e8f60005a41c3afc4c2f12721c013/arguments_02.jpg)
+![arguments_02.jpg](./images/arguments_02.jpg)
 
 Calling "rollDice" multiple times by using argument
 
@@ -78,7 +78,7 @@ function throwDice (numbOfRoll) { // 1 argument
 throwDice(6); // the code runs 6 times
 ```
 
-![arguments_03.jpg](Arguments%20(inputs)%20c43e8f60005a41c3afc4c2f12721c013/arguments_03.jpg)
+![arguments_03.jpg](./images/arguments_03.jpg)
 
 ### Return Statement
 
@@ -101,7 +101,7 @@ sum; // undefined
     The result of function “add” is evaluated but it is NOT stored anywhere, therefore you canNOT call it later.
 
 
-![return_statement_01.jpg](Return%20Statement%206e91bf3d60aa4aabb3b6ccb07bc627a7/return_statement_01.jpg)
+![return_statement_01.jpg](./images/return_statement_01.jpg)
 
 - “return” will store the value of the function after being evaluated, therefore you can call it after that.
 
@@ -114,7 +114,7 @@ const sum = add (10, 16); // 26
 sum; // 26
 ```
 
-![return_statement_02.jpg](Return%20Statement%206e91bf3d60aa4aabb3b6ccb07bc627a7/return_statement_02.jpg)
+![return_statement_02.jpg](./images/return_statement_02.jpg)
 
 ### Function Challenge 1: passwordValidator
 
@@ -150,11 +150,11 @@ isPasswordValid('emmalin123', 'isCool') // true
 
 - isPasswordValid('emmalin123', 'emmalin') // false
 
-![password_validator_01.jpg](Function%20Challenge%201%20passwordValidator%207bd67d0a69d74554bce66231d6770c84/password_validator_01.jpg)
+![password_validator_01.jpg](./images/password_validator_01.jpg)
 
 - isPasswordValid('emmalin123', 'isCool') // true
 
-![password_validator_02.jpg](Function%20Challenge%201%20passwordValidator%207bd67d0a69d74554bce66231d6770c84/password_validator_02.jpg)
+![password_validator_02.jpg](./images/password_validator_02.jpg)
 
 Explanation: Condition for “password” with “indexOf()”
 
@@ -267,7 +267,7 @@ Notes:
 - Declare variable “total” and initialize it with “0”. Why do you need this variable?
     - the calculation for the average value is average = (sum of all numbers) / total elements in the array
 
-        ![average_01.jpg](Function%20Challenge%202%20Average%20f96d346cd8c449d8a9f8749d79b68f56/average_01.jpg)
+        ![average_01.jpg](./images/average_01.jpg)
 
     - You need a variable to store and to update the addition of the numbers in the array (**total**) so that later on you can divide that sum number by the number of elements in the array (**arr.length**) for the average value.
 - If I were to declare then return “res”. What would the code have been?
@@ -322,15 +322,15 @@ Notes:
 - String casing. Why do you need it?
     - You are looping over a string of LOWER case alphabet letters, even if there is only one letter in your sentence is UPPER case (letter “G” in the image), “isPangram” will return false in spite of the fact that your sentence contains all the alphabetical letters.
 
-    ![pangrams_01.jpg](Function%20Challenge%203%20Pangram%2063f127c05e1641d78a4f46bac4112b89/pangrams_01.jpg)
+    ![pangrams_01.jpg](./images/pangrams_01.jpg)
 
     - It is very important to equalize all the string case for the correct checking result
 
-    ![pangrams_02.jpg](Function%20Challenge%203%20Pangram%2063f127c05e1641d78a4f46bac4112b89/pangrams_02.jpg)
+    ![pangrams_02.jpg](./images/pangrams_02.jpg)
 
 - If you were to use “[**includes**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes)” for the condition. What would be the changes in the code?
 
-    ![pangrams_03.jpg](Function%20Challenge%203%20Pangram%2063f127c05e1641d78a4f46bac4112b89/pangrams_03.jpg)
+    ![pangrams_03.jpg](./images/pangrams_03.jpg)
 
     - You would not need to check “indexOf” with “-1”
     - The “return” statements would be inverted.
