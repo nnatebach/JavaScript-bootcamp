@@ -20,20 +20,20 @@ Methods:
 
     Math.random() * 6
 
-    ![dice_roll_01.jpg](Dice%20Roll%20function%205679caabeb7044d8af3ad23a5db0282a/dice_roll_01.jpg)
+    ![./images/dice_roll_01.jpg](Dice%20Roll%20function%205679caabeb7044d8af3ad23a5db0282a/dice_roll_01.jpg)
 
 - [Math.floor()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor)
     - rounds down and returns the largest integer less than or equal to a given number ⇒ remove the decimal part.
     - Math.floor(Math.random() * 6)
 
-        ![dice_roll_02.jpg](Dice%20Roll%20function%205679caabeb7044d8af3ad23a5db0282a/dice_roll_02.jpg)
+        ![./images/dice_roll_02.jpg](Dice%20Roll%20function%205679caabeb7044d8af3ad23a5db0282a/dice_roll_02.jpg)
 
     - Math.floor(Math.random() * 6) + 1 ⇒ Why adding 1?
 
         Add “1” into “Math.floor()” because you want the values from 1 to 6 (there is no zero value in the dice)
 
 
-    ![dice_roll_03.jpg](Dice%20Roll%20function%205679caabeb7044d8af3ad23a5db0282a/dice_roll_03.jpg)
+    ![./images/dice_roll_03.jpg](Dice%20Roll%20function%205679caabeb7044d8af3ad23a5db0282a/dice_roll_03.jpg)
 
 ### Arguments (inputs)
 
