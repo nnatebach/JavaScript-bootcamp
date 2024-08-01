@@ -626,3 +626,66 @@
     Now you have two versions of the array, 'copy' and 'animals'
 
     <img src="./images/slice_07.jpg" alt="slice-07">
+
+#### 12. Intro to Reference Types
+
+![reference_type_01.jpg](./images/reference_type_01.jpg)
+
+- **fruit** is storing the value “orange”
+- **color** is also storing the value “orange”
+- if you change the value of **fruit** to “watermelon”, what
+
+    The value of **color** would still be “orange”
+
+- **fruit** and **color** are initialized with the same value of “orange”.
+If you change the value of **fruit** to something else, the value of **color** will still remain the same.
+What is the reason?
+
+    ![reference_type_02.jpg](./images/reference_type_02.jpg)
+
+    - Reasons:
+        - “orange” and “watermelon” are [**primitive**](https://developer.mozilla.org/en-US/docs/Glossary/Primitive) data type (strings) ⇒ they are NOT linked!
+        - **color** and **fruit** are **value type variable**, they are created to store values.
+    - Explanation: Every single variable you ever make in JavaScript is stored in memory.
+
+        ⇒ When you are working with value type variable, the actual value is stored in memory.
+
+    - Summary:  When you assign a primitive value from one variable to another, the value itself is copied, meaning each variable holds a distinct copy of the data. Changes to one variable do not affect the other.
+
+    ![reference_type_03.jpg](./images/reference_type_03.jpg)
+
+    Learn more at [**Understanding Reference vs. Value in JavaScript**](https://dev.to/muhammedshameel/understanding-reference-vs-value-in-javascript-ab4)
+
+    > JavaScript is often described as a "pass-by-value" language for primitive types and a "pass-by-reference" language for reference types.
+    >
+- How the information in an array is stored in the memory?
+    - The array is stored as a reference in the memory
+
+        ```jsx
+        const arr = [1,2,3,4,5,6,7,8,9]
+        ```
+
+        - “arr” is the variable that holds the array
+        - The array itself contains the values [1,2,3,4,5,6,7,8,9]
+
+        In the memory:
+
+        - The information in the array is stored as a reference to that array, something like a string of numbers or a memory address (938745)
+        - The variable does NOT hold the array, it holds a reference to where the array is in memory compared to a value type variable where the actual value is stored.
+
+    - Example 1:
+
+        ![reference_type_04.jpg](./images/reference_type_04.jpg)
+
+        In the memory:
+
+        - The array [5,6,7,8] is stored as a reference.
+        - When you assign the variable **nums** to **otherNums**, you are assigning the reference of the array [5,6,7,8] to the variable **otherNums**, another way to say is the two variables are pointing to the same reference in the memory.
+        - If you update the array using one variable, say nums.push(9, 10), the array in **otherNums** will get the same update. The reason is that both variables are pointing to the same reference in the memory.
+
+    - Example 2: Same thing goes with “pop()” for **nums** and **otherNums**
+
+        ![reference_type_05.jpg](./images/reference_type_05.jpg)
+
+        - If you pop() something out of the array from one variable, the other variable will also be impacted.
+        - The reason is both variables are pointing to the same reference in the memory for the same array.
