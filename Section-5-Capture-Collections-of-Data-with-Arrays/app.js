@@ -227,3 +227,44 @@ animals.slice(); // ['shark', 'salmon', 'whale', 'bear', 'lizard', 'tortoise']
 
 let copy = animals.slice();
 // now you have two versions of the array, 'copy' and 'animals'
+
+///////////////////// 14. Working with Nested Arrays
+
+////// Example 1: Single layer nested
+
+const animalPairs = [
+  ['doe', 'buck'],
+  ['ewe', 'ram'],
+  ['peahen', 'peacock']
+];
+
+animalPairs[0][1]; // 'buck'
+animalPairs[0][2]; // undefined
+animalPairs[2][1]; // 'peacock'
+
+////// Example 2: Double layers nested
+
+const animalPairs1 = [
+  ['doe', ['buck', 'stag']],
+  ['ewe', 'ram'],
+  ['peahen', 'peacock']
+];
+
+animalPairs1[0][1][0]; // 'buck'
+animalPairs1[0][0]; // 'doe'
+animalPairs1[0][1][1]; // 'stag'
+animalPairs1[0][1][2]; // undefined
+
+////// Example 3: Multi-layers (3) nested
+
+const animalPairs2 = [
+  ['doe', ['buck', 'stag']],
+  ['ewe', 'ram', ['eel', [['tiger', 'horse'], 'deer']]],
+  ['peahen', 'peacock'],
+  [undefined, [null, [false]]]
+];
+
+animalPairs2[1][2][1][0][1]; // 'horse'
+animalPairs2[1][2][1][1];; // 'deer'
+animalPairs2[3][1][0]; // null
+animalPairs2[3][1][1][0]; // false

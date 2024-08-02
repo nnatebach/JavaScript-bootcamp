@@ -705,3 +705,63 @@ However, it is NOT possible to assign a different array to that same variable. Y
 </aside>
 
 ![const_array_01.jpg](./images/const_array_01.jpg)
+
+#### 14. Working with Nested Arrays
+
+- Syntax:
+    - Single layer nested: arr_name[arr_index][first_layer_arr_index]
+    - Double layer nested: arr_name[arr_index][first_layer_arr_index][second_layer_arr_index]
+    - Multi-layer nested: arr_name[arr_index][first_layer_arr_index][second_layer_arr_index][third_layer_arr_index]
+
+- Example 1: Single layer nested
+
+    ```jsx
+    const animalPairs = [
+      ['doe', 'buck'],
+      ['ewe', 'ram'],
+      ['peahen', 'peacock']
+    ];
+
+    animalPairs[0][1]; // 'buck'
+    animalPairs[0][2]; // undefined
+    animalPairs[2][1]; // 'peacock'
+    ```
+
+    ![nested_arrays_01.jpg](./images/nested_arrays_01.jpg)
+
+
+- Example 2: Double layers nested
+
+    ```jsx
+    const animalPairs1 = [
+      ['doe', ['buck', 'stag']],
+      ['ewe', 'ram'],
+      ['peahen', 'peacock']
+    ];
+
+    animalPairs1[0][1][0]; // 'buck'
+    animalPairs1[0][0]; // 'doe'
+    animalPairs1[0][1][1]; // 'stag'
+    animalPairs1[0][1][2]; // undefined
+    ```
+
+    ![nested_arrays_02.jpg](./images/nested_arrays_02.jpg)
+
+
+- Example 3: Multi-layers (3) nested
+
+    ```jsx
+    const animalPairs2 = [
+      ['doe', ['buck', 'stag']],
+      ['ewe', 'ram', ['eel', [['tiger', 'horse'], 'deer']]],
+      ['peahen', 'peacock'],
+      [undefined, [null, [false]]]
+    ];
+
+    animalPairs2[1][2][1][0][1]; // 'horse'
+    animalPairs2[1][2][1][1];; // 'deer'
+    animalPairs2[3][1][0]; // null
+    animalPairs2[3][1][1][0]; // false
+    ```
+
+    ![nested_arrays_03.jpg](./images/nested_arrays_03.jpg)
