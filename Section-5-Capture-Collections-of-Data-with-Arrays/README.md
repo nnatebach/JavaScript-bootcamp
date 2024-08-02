@@ -689,3 +689,19 @@ What is the reason?
 
         - If you pop() something out of the array from one variable, the other variable will also be impacted.
         - The reason is both variables are pointing to the same reference in the memory for the same array.
+
+#### 13. Using Const with Arrays
+
+> When an array is assigned to a variable, the variable will point to the reference of that array in the memory.
+>
+
+You can update the array however you want by adding or removing the elements, the internal, of the array
+
+However, it is NOT possible to assign a different array to that same variable. You can NOT point a variable to a different reference in the memory. JavaScript will throw an error of “Uncaught TypeError: Assignment to constant variable.”
+
+<aside>
+💡 You use “const” for something which its value canNOT be changed. For example, an array.
+
+</aside>
+
+![const_array_01.jpg](./images/const_array_01.jpg)
