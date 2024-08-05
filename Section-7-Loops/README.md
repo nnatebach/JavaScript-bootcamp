@@ -189,3 +189,217 @@ Reference: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/St
     }
         - Reason: The expression `i - 10`  is not actually modifying `i`. Instead, it simply evaluates to `i - 10`  without assigning the result back to `i` . Since `i`  will forever remains as 50 without being updated, this makes the condition  `i >= 0`  always true so the loop runs infinitely.
         - Solution: You need `i -= 10`  to update `i`  correctly
+
+## For Loops & Arrays
+
+- Example 1:
+
+    *Print out number of iterations and the scores of examScores*
+
+    *examScores = [98, 77, 84, 91, 57, 66]*
+
+    - *Sample*
+
+        ```jsx
+        // 0 98
+        // 1 77
+        // 2 84
+        // 3 91
+        // 4 57
+        // 5 66
+        ```
+
+    - Code
+
+        ```jsx
+        const examScores = [98, 77, 84, 91, 57, 66];
+
+        for (let i = 0; i < examScores.length; i++) {
+          console.log(i, examScores[i]);
+        }
+        ```
+
+    - Output:
+
+        ![for_arrays_01.jpg](./images/for_arrays_01.jpg)
+
+
+    - Question
+        - How about the condition `let i = 0; i <= examScores.length; i++`  ?
+
+
+            ![for_arrays_02.jpg](./images/for_arrays_02.jpg)
+
+            - Reason:
+                - **i** starts from 0
+                - **i** will stop when **i** reaches **index 6**
+                - There are only 6 elements in the array (last **index** is **5**)
+            - Result: The last output will be `6  undefined` , there is no 6th index in the array *examScores.*
+
+- Example 2:
+    - Given array object
+
+        ```jsx
+        const myStudents = [
+          {
+            firstName: 'Zeus',
+            grade: 86
+          },
+          {
+            firstName: 'Artemis',
+            grade: 97
+          },
+          {
+            firstName: 'Hera',
+            grade: 72
+          },
+          {
+            firstName: 'Apollo',
+            grade: 90
+          },
+        ]
+        ```
+
+    - *Sample output*
+
+        ```jsx
+        // Zeus    86
+        // Artemis    97
+        // Hera    72
+        // Apollo    90
+        ```
+
+    - Code
+
+        ```jsx
+        for (let i = 0; i < myStudents.length; i++) {
+            let student = myStudents[i];
+            console.log(`${student.firstName} scored ${student.grade}`);
+        }
+        ```
+
+    - Output:
+
+        ![for_arrays_04.jpg](./images/for_arrays_04.jpg)
+
+    - Question
+        - How to print out the full array object?
+            - Output sample:
+
+
+                ![for_arrays_03.jpg](./images/for_arrays_03.jpg)
+
+            - Code:
+
+                ```jsx
+                for (let i = 0; i < myStudents.length; i++) {
+                    let student = myStudents[i];
+                    console.log(student);
+                }
+                ```
+
+
+- Example 3:
+
+    *Print out every letter of this string in the backward orders*
+
+    *In other word, print a reversed string*
+
+    - Given the string
+
+        ```jsx
+        const word = 'stressed';
+        ```
+
+    - *Sample output*
+
+        ```jsx
+        desserts
+        ```
+
+    - Code
+
+        ```jsx
+        let reversedWord = '';
+        for (let i = word.length - 1; i >= 0; i--) {
+            reversedWord += word[i];
+        }
+        console.log(reversedWord);
+        ```
+
+    - Output:
+
+        ![for_arrays_05.jpg](./images/for_arrays_05.jpg)
+
+
+    - Question
+        - What if the condition starts by the length of the “word” with `let i = word.length`  ?
+
+            The length of the string “stressed” is 8. The value of **word.length** is 8.
+
+            ![for_arrays_06.jpg](./images/for_arrays_06.jpg)
+
+            ![for_arrays_09.jpg](./images/for_arrays_09.jpg)
+
+            The string starts at index 0, there are 8 characters, and stops at 7. The last index is 7.
+
+            Therefore, the index for the last character is **word.length - 1** = 8 - 1 = 7
+
+            **word.length** will tell the loop to start at index 8 instead of 7 which is incorrect.
+
+            There is no value at index 8 so the program will output *undefined*
+
+            ![for_arrays_07.jpg](./images/for_arrays_07.jpg)
+
+            In order to remove the *undefined* value, you will need to start from index 7
+
+            So the correct condition is
+
+            ```jsx
+            let i = word.length - 1
+            ```
+
+            The correct index for the last character of the string of 8 characters should be 7
+
+            ![for_arrays_08.jpg](./images/for_arrays_08.jpg)
+
+        - Calculating *total* outputs *NaN* in Example 2
+
+            This code outputs “NaN”. Why?
+
+            ```jsx
+            let total = 0;
+
+            for (let i = 0; i < myStudents.length; i++) {
+              let student = myStudents.grade;
+              total += student
+            }
+            console.log(total);
+            ```
+
+            Reason: *myStudents* is an array of objects NOT an array of elements.
+
+            ```jsx
+            const myStudents = [
+              {
+                firstName: 'Zeus',
+                grade: 86
+              },
+              {
+                firstName: 'Artemis',
+                grade: 97
+              },
+              {
+                firstName: 'Hera',
+                grade: 72
+              },
+              {
+                firstName: 'Apollo',
+                grade: 90
+              },
+            ]
+            ```
+
+            Solution: If you want to get the *property* “firstName” or “grade”. You will need the counter *i* for the array *myStudents*.
+
+            `let student = myStudents[i].grade;`
