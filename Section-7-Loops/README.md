@@ -403,3 +403,139 @@ Reference: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/St
             Solution: If you want to get the *property* “firstName” or “grade”. You will need the counter *i* for the array *myStudents*.
 
             `let student = myStudents[i].grade;`
+
+## Nested For Loops
+
+- Example 1:
+    - Output sample
+
+        ```jsx
+        // Print this structure
+        // OUTER LOOP: 1 -> 10
+        // INNER LOOP: 10, 8, 6, 4, 2, 0
+        ```
+
+
+    - Code
+
+        ```jsx
+        for (let i = 1; i <= 10; i++) {
+          console.log('OUTER LOOP: ', i);
+          for (let j = 10; j >= 0; j -= 2) {
+            console.log('   INNER LOOP: ', j);
+          }
+        }
+        ```
+
+
+    - Output:
+
+        ![nested_for_01.jpg](./images/nested_for_01.jpg)
+
+- Example 2:
+    - Output sample:
+
+        ```jsx
+        // OUTER: 0
+        //    INNER: LOL
+        // OUTER: 1
+        //    INNER: LOL
+        // OUTER: 2
+        //    INNER: LOL
+        // OUTER: 3
+        //    INNER: LOL
+        // OUTER: 4
+        //    INNER: LOL
+        ```
+
+
+    - Code
+
+        ```jsx
+        let str = 'LOL';
+
+        for (let i = 0; i <= 4; i++) {
+          console.log('OUTER:', i);
+          for (let j = 0; j < 1; j++) {
+            console.log('   INNER:', str);
+          }
+        }
+        ```
+
+
+    - Output:
+
+    ![nested_for_02.jpg](./images/nested_for_02.jpg)
+
+    - Question
+        - What is the condition `j < 1`  for?
+
+            That condition is to make sure that the inner loop runs exactly once for each iteration of the outer loop.
+
+            The inner loop maybe unnecessary, you can rewrite the code without the inner loop
+
+            ```jsx
+            for (let m = 0; m <= 4; m++) {
+              console.log('Outer:', m);
+              console.log('  Inner:', str);
+            }
+            ```
+
+            The output will be exactly the same.
+
+
+- Example 3:
+
+    *Calculate and print out the total of all the elements in the arrays*
+
+    Given the array
+
+    ```jsx
+    const gameBoard = [
+      [4, 32, 8, 4],
+      [64, 8, 32, 2],
+      [8, 32, 16, 4],
+      [2, 8, 4, 2],
+    ]
+    ```
+
+    - Output sample:
+
+        ```jsx
+        //Total score is 230.
+        ```
+
+
+    - Code
+
+        ```jsx
+        let totalScore = 0;
+
+        for (let i = 0; i <= gameBoard.length - 1; i++) {
+          let row = gameBoard[i]
+          // Print out the nested arrays (4)
+          console.log(row);
+          for (let j = 0; j <= row.length - 1; j++) {
+            // Print out all the elements in each array
+            console.log(row[j]);
+            totalScore += row[j];
+          }
+        }
+
+        console.log(`Total score is ${totalScore}.`); // Total score is 230
+        ```
+
+
+    - Output:
+
+        ![nested_for_03.jpg](./images/nested_for_03.jpg)
+
+        ![nested_for_04.jpg](./images/nested_for_04.jpg)
+
+
+    - Question
+        - What is the purpose of variable ‘*row*’*?*
+
+            The variable ‘*row*’ is used for running over the elements inside the nested loops.
+
+            As you are able to loop through the elements in side the nested loops, you can print them out and also accessing the values for the calculation of the total score or just anything else.
