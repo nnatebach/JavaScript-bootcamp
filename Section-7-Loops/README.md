@@ -539,3 +539,218 @@ Reference: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/St
             The variable ‘*row*’ is used for running over the elements inside the nested loops.
 
             As you are able to loop through the elements in side the nested loops, you can print them out and also accessing the values for the calculation of the total score or just anything else.
+
+## while
+
+Example:
+
+*Print numbers from 0 to 5*
+
+- Code
+    - For loop
+
+        ```jsx
+        for (let i = 0; i <= 5; i++) {
+          console.log(i);
+        }
+        ```
+
+    - While loop
+
+        ```jsx
+        let j = 0;
+        while (j <= 5) {
+          console.log(j);
+          j++;
+        }
+        ```
+
+        - Explanations of *while* loop:
+            - **j** starts from 0
+            - the loop will keep running as long as the condition `j ≤ 5`  is **true**.
+            - console logs **j**.
+            - **j** increments by 1
+            - when **j** reaches 6, the condition becomes **false** and the loop finishes.
+
+- Output:
+
+    ![while_loop_01.jpg](./images/while_loop_01.jpg)
+
+
+- Conclusion: While both loop output the same result, “for” loop is still preferred because it is still a better practice to NOT create a variable outside of a loop.
+
+    Further reading: [Scope](https://developer.mozilla.org/en-US/docs/Glossary/Scope)
+
+## more while
+
+> The purpose of *while* loop, it really excels, is when you don’t know exactly how many times it is going to run
+>
+
+A specific example is the game [2048](https://play2048.co/) where you have the logic loops until there is a game over which might sometimes be hundreds or thousands of turns, you never know.
+
+Examples:
+
+- Example 1:
+
+    *Create a guess number game that includes the target number and a random-generating number*
+
+    *We will see how many time it will take for the program to guess the exact number as the target number.*
+
+    - Code
+
+        ```jsx
+        // Target number
+        const target = Math.floor(Math.random() * 10);
+
+        // Number generating
+
+        let guess = Math.floor(Math.random() * 10);
+
+        while (guess !== target) {
+          console.log(guess);
+          guess = Math.floor(Math.random() * 10);
+        }
+
+        console.log(`Target: ${target} Guess: ${guess}`);
+        ```
+
+
+    - Output
+
+        ![more_while_01.jpg](./images/more_while_01.jpg)
+
+
+- Example 2:
+
+    Same with Example 1 but with an extra requirement
+
+    *Show the number of time it takes to guess the correct target number*
+
+    - Sample output
+
+        ```jsx
+        // Target: 0
+        // Guess: 0
+        // Number of guess: 3,4,5,6,2,1,1,8
+        // Total guesses: 8
+        ```
+
+    - Code
+
+        ```jsx
+        // Target number
+        const target = Math.floor(Math.random() * 10);
+
+        // Number generating
+
+        let guess = Math.floor(Math.random() * 10);
+
+        // Extra - Show the number of time it takes to guess the correct target number
+        let numGuess = [];
+        let totalGuess
+
+        while (guess !== target) {
+          console.log(`Guess is ${guess}`);
+          guess = Math.floor(Math.random() * 10);
+          // Show the number of time it takes to guess the correct target number
+          numGuess.push(guess)
+          totalGuess = numGuess.length
+        }
+
+        console.log(`Target: ${target} \n Guess: ${guess} \n Number of guesses: ${numGuess} \n Total guesses: ${totalGuess}`);
+        ```
+
+
+    - Output:
+
+        ![more_while_02.jpg](./images/more_while_02.jpg)
+
+
+- Question
+    - If I duplicate the code of Example 2
+    `Number of guesses: ${numGuess}` outputs blank result
+    `Total guesses: ${totalGuess}` outputs *undefined*
+    What is the reason?
+        - Output for the second code in line 37
+
+        ![more_while_03.jpg](./images/more_while_03.jpg)
+
+        - Code
+
+            ```jsx
+            // Target number
+            const target = Math.floor(Math.random() * 10);
+
+            // Number generating
+
+            let guess = Math.floor(Math.random() * 10);
+
+            while (guess !== target) {
+              console.log(`Guess is ${guess}`);
+              guess = Math.floor(Math.random() * 10);
+            }
+
+            console.log(`Target: ${target} \n Guess: ${guess}`);
+
+            // Extra - Show the number of time it takes to guess the correct target number
+            let numGuess = [];
+            let totalGuess
+
+            while (guess !== target) {
+              console.log(`Guess is ${guess}`);
+              guess = Math.floor(Math.random() * 10);
+              // Show the number of time it takes to guess the correct target number
+              numGuess.push(guess)
+              totalGuess = numGuess.length
+            }
+
+            console.log(`Target: ${target} \n Guess: ${guess} \n Number of guesses: ${numGuess} \n Total guesses: ${totalGuess}`);
+            ```
+
+            - Reason: Incorrect placement and initialization of the variables `numGuess` and `totalGuess`
+
+            - Explanations
+                - **First `while` Loop**:
+                    - The first `while` loop continues to generate guesses until `guess` equals `target`.
+                    - After this loop completes, `guess` is guaranteed to be equal to `target`.
+                - **Variable Initialization**:
+                    - After the first loop, `numGuess` and `totalGuess` are declared.
+                    - Since `guess` is already equal to `target` from the first loop, the second `while` loop never executes.
+                - **Second `while` Loop**:
+                    - The second `while` loop condition (`guess !== target`) is false immediately because `guess` already equals `target`.
+                    - As a result, the code inside the second `while` loop that updates `numGuess` and `totalGuess` never runs.
+                - **Final Output**:
+                    - `Number of guesses: ${numGuess}` outputs a blank because `numGuess` is still an empty array.
+                    - `Total guesses: ${totalGuess}` outputs `undefined` because `totalGuess` is declared but never assigned a value.
+
+        - Solution: combine the logic of guessing and counting into a single loop
+            - Correct code
+
+                ```jsx
+                // Target number
+                const target = Math.floor(Math.random() * 10);
+
+                // Number generating
+                let guess = Math.floor(Math.random() * 10);
+
+                // Extra - Show the number of times it takes to guess the correct target number
+                let numGuess = [];
+                let totalGuess = 0;
+
+                while (guess !== target) {
+                  console.log(`Guess is ${guess}`);
+                  numGuess.push(guess);
+                  guess = Math.floor(Math.random() * 10);
+                  totalGuess = numGuess.length;
+                }
+
+                console.log(`Target: ${target} \nGuess: ${guess} \nNumber of guesses: ${numGuess.join(', ')} \nTotal guesses: ${totalGuess}`);
+                ```
+
+            - Explanations
+                - **Single `while` Loop**:
+                    - The guessing and counting logic are combined into one `while` loop.
+                    - This ensures that every guess is tracked and counted.
+                - **Logging**:
+                    - Inside the loop, log each guess, push it to the `numGuess` array, and update `totalGuess`.
+                    - After the loop, print out the target, the final guess, the list of guesses, and the total number of guesses.
