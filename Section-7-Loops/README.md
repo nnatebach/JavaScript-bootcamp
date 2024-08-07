@@ -799,7 +799,7 @@ console.log(`CONGRATS YOU WIN!!`);
 
 - Output:
 
-    ![break_01.jpg](break%20keyword%20338e46e0563649eda1ea6db4b932e41a/break_01.jpg)
+    ![break_01.jpg](./images/break_01.jpg)
 
 
 - Notes:
