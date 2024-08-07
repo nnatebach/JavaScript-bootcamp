@@ -754,3 +754,59 @@ Examples:
                 - **Logging**:
                     - Inside the loop, log each guess, push it to the `numGuess` array, and update `totalGuess`.
                     - After the loop, print out the target, the final guess, the list of guesses, and the total number of guesses.
+
+## break keyword
+
+Same code used in “more-while-loops”
+
+```jsx
+// Target number
+const target = Math.floor(Math.random() * 10);
+
+// Number generating
+
+let guess = Math.floor(Math.random() * 10);
+
+while (guess !== target) {
+  console.log(`Target: ${target} \n Guess: ${guess}`);
+  guess = Math.floor(Math.random() * 10);
+}
+
+console.log(`Target number: ${target} \nGuessed number: ${guess}`);
+console.log(`CONGRATS YOU WIN!!`);
+```
+
+You can use **if** statement for the condition `guess !== target`  following with a **break** keyword in the **while** loop.
+
+```jsx
+while (true) {
+  if (guess === target) break;
+  console.log(`Target: ${target} \n Guess: ${guess}`);
+  guess = Math.floor(Math.random() * 10);
+}
+console.log(`Target number: ${target} \nGuessed number: ${guess}`);
+console.log(`CONGRATS YOU WIN!!`);
+```
+
+- Explanations:
+    - The loop will keep running as long as the condition is still **true**
+    - The loop will **break** when `guess === target`
+    - After the loop breaks, the programming will print out
+
+        `console.log(`Target number: ${target} \nGuessed number: ${guess}`);`
+        `console.log(`CONGRATS YOU WIN!!`);`
+
+
+- Output:
+
+    ![break_01.jpg](break%20keyword%20338e46e0563649eda1ea6db4b932e41a/break_01.jpg)
+
+
+- Notes:
+    - This is only an example for where to use the **break** keyword with the **while** loop.
+    - It can be easily ended up being an infinite loop ⇒ Not a good practice!
+    - Not informational or explanatory (main reason)
+
+        A better approach is
+
+        `while (!gameOver)`
