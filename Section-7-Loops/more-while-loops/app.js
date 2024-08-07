@@ -8,29 +8,10 @@ const target = Math.floor(Math.random() * 10);
 
 let guess = Math.floor(Math.random() * 10);
 
-// Extra - Show the number of time it takes to guess the correct target number
-let numGuess = [];
-let totalGuess
-
 while (guess !== target) {
-  console.log(`Guess is ${guess}`);
+  console.log(`Target: ${target} \n Guess: ${guess}`);
   guess = Math.floor(Math.random() * 10);
-  // Show the number of time it takes to guess the correct target number
-  numGuess.push(guess)
-  totalGuess = numGuess.length
 }
 
-console.log(`Target: ${target} \n Guess: ${guess}`);
-
-// Extra - Show the number of time it takes to guess the correct target number
-// let numGuess = [];
-// let totalGuess = 0;
-
-// while (guess !== target) {
-//   console.log(`Guess is ${guess}`);
-//   numGuess.push(guess);
-//   guess = Math.floor(Math.random() * 10);
-//   totalGuess = numGuess.length;
-// }
-
-// console.log(`Target: ${target} \nGuess: ${guess} \nNumber of guesses: ${numGuess.join(', ')} \nTotal guesses: ${totalGuess}`);
+console.log(`Target number: ${target} \nGuessed number: ${guess}`);
+console.log(`CONGRATS YOU WIN!!`);
