@@ -1272,3 +1272,130 @@ for (let i = 0; i < words1.length; i++) {
             This code will generate 4 outputs (each index of `words1` combined with the same index of `words2`)
 
             ![for_vs_for-of_05.jpg](./images/for_vs_for-of_05.jpg)
+
+## for-of-objects
+
+- Example 1
+
+    Loop and print out each value in the object
+
+    ```jsx
+    const movieReviews = {
+      Arrival: 9.5,
+      Alien: 9,
+      Amelie: 8,
+      'In Bruges': 9,
+      Amadeus: 10,
+      'Kill Bill': 8,
+      'Little Miss Sunshine': 8.5,
+      Coraline: 7.5
+    };
+    ```
+
+    - Solutions that do NOT work
+        - Using “[]”, accessing as an array element
+
+            ![for-of_objects_01.jpg](./images/for-of_objects_01.jpg)
+
+        - using for…of loop
+
+            ![for-of_objects_02.jpg](./images/for-of_objects_02.jpg)
+
+    - Solutions that DOES work:
+        - [Object.keys()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys) - returns an array of a given object's own enumerable property names (keys), which are strings.
+
+            ![for-of_objects_03.jpg](./images/for-of_objects_03.jpg)
+
+
+        - [Object.values()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values) - returns an array of a given object's own enumerable property values, which correspond to the keys.
+
+            ![for-of_objects_04.jpg](./images/for-of_objects_04.jpg)
+
+
+    - Using Object.keys to print out all keys and values of *movieReview* object
+
+        ```jsx
+        for (let movie of Object.keys(movieReviews)) {
+            console.log(movie)
+        }
+        ```
+
+        ![for-of_objects_05.jpg](./images/for-of_objects_05.jpg)
+
+        ```jsx
+        for (let movie of Object.keys(movieReviews)) {
+            console.log(movie, movieReviews)
+        }
+        ```
+
+        ![for-of_objects_06.jpg](./images/for-of_objects_06.jpg)
+
+        ```jsx
+        for (let movie of Object.keys(movieReviews)) {
+            console.log(movie, movieReviews[movie])
+        }
+        ```
+
+        ![for-of_objects_07.jpg](./images/for-of_objects_07.jpg)
+
+
+- Example 2:
+
+    Use Object.values() to print out all scores of *movieReviews* object
+
+    Calculate average score for all scores in *movieReviews* object
+
+    - Print out all scores
+
+        ```jsx
+        for (let score of Object.values(movieReviews)) {
+            console.log(score)
+        }
+        ```
+
+        ![for-of_objects_08.jpg](./images/for-of_objects_08.jpg)
+
+    - Calculate average score for all scores
+        - This code can be modified to
+            - Print out all scores
+            - Calculate and print out average score
+
+            all in one piece of code
+
+            ```jsx
+            const ratings = Object.values(movieReviews);
+            let total = 0;
+
+            for (let rating of ratings) {
+                total += rating
+            }
+            let avg = total / ratings.length
+            console.log(avg)
+            ```
+
+
+        - A more lengthy version (My self-writing code)
+
+            ```jsx
+            let total = 0
+
+            for (let rating of Object.values(movieReviews)) {
+                total += rating
+            }
+            console.log(total)
+            let average = total / Object.values(movieReviews).length
+            console.log(average)
+            ```
+
+
+        - Same result
+
+            ![for-of_objects_09.jpg](./images/for-of_objects_09.jpg)
+
+            ![for-of_objects_10.jpg](./images/for-of_objects_10.jpg)
+
+
+        <aside>
+        💡 There is no simple way to just access the element without having to call Object.keys() or Object.values()
+
+        </aside>
