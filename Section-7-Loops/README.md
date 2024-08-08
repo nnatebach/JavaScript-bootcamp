@@ -810,3 +810,465 @@ console.log(`CONGRATS YOU WIN!!`);
         A better approach is
 
         `while (!gameOver)`
+
+## for….of
+
+> A way of iterating over arrays or other iterable objects
+>
+
+- Example 1:
+
+    Print out every element in the array using [**for**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) and [**for….of**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
+
+    - for
+
+        ```jsx
+        let subreddits = ['soccer', 'popheads', 'cringe', 'books']
+
+        for (let i = 0; i <= subreddits.length - 1; i++) {
+          console.log(subreddits[i])
+        }
+        ```
+
+
+    - for….of
+
+        ```jsx
+        let subreddits = ['soccer', 'popheads', 'cringe', 'books']
+
+        for (let sub of subreddits) {
+          console.log(sub)
+        }
+        ```
+
+
+    - The two will output the same result
+
+
+        ![for_of_01.jpg](./images/for_of_01.jpg)
+
+
+- Example 2:
+
+    Print out all character in a string in upper case
+
+    - Code
+
+        ```jsx
+        for (let char of 'cockadoodledoo') {
+          console.log(char.toUpperCase())
+        }
+        ```
+
+
+    - Output
+
+        ![for_of_02.jpg](./images/for_of_02.jpg)
+
+## for and for….of
+
+- Example 1
+    - Sample output
+
+        ```jsx
+        // 2, 7, 6 summed to 15
+        // 9, 5, 1 summed to 15
+        // 4, 3, 8 summed to 15
+        ```
+
+    - for loop
+        - Code:
+
+            ```jsx
+            const magicSquare = [[2, 7, 6], [9, 5, 1], [4, 3, 8]]
+
+            for (let i = 0; i < magicSquare.length; i++) {
+              // console.log(magicSquare[i]);
+              let row = magicSquare[i];
+              let sum = 0;
+              console.log(row);
+              for (let j = 0; j < row.length; j++) {
+                // console.log(row[j]);
+                sum += row[j]
+                console.log(sum);
+              }
+              console.log(`${row} summed to ${sum}`);
+            }
+            ```
+
+        - Output
+
+            ![for_vs_for-of_02.jpg](./images/for_vs_for-of_02.jpg)
+
+
+    - for…of
+        - Code
+
+            ```jsx
+            for (let row of magicSquare) {
+              console.log(row);
+              let sum = 0
+              for (let num of row) {
+                sum += num
+                console.log(sum);
+              }
+              console.log(`${row} summed to ${sum}`);
+            }
+            ```
+
+
+        - Output
+
+            ![for_vs_for-of_02.jpg](./images/for_vs_for-of_02%201.jpg)
+
+
+    - Conclusion: For the same result, the **for…of** loop is going to be cleaner and easier to understand than the **for** loop.
+
+- Example 2:
+    - Given 2 arrays
+
+        ```jsx
+        const words1 = ['mail', 'meal', 'bath', 'black']
+        const words2 = ['box', 'shake', 'tub', 'berry']
+        ```
+
+
+    - Sample output
+
+        ```jsx
+        mailbox
+        milkshake
+        bathtub
+        blackberry
+        ```
+
+
+    - Code
+
+        ```jsx
+        for (let i = 0; i < words1.length; i++) {
+          console.log(`${words1[i]}${words2[i]}`);
+        }
+        ```
+
+
+    - Output
+
+        ![for_vs_for-of_03.jpg](./images/for_vs_for-of_03.jpg)
+
+
+    - Explanations
+    - Conclusion: If you need to care about the index of the array element, traditional **for** loop is going to be a better solution than **for…of** loop.
+
+- Question
+    - If I were to move `let sum = 0`  out of the *for* loop
+    The output is going to be different.
+    What is the reason?
+        - Given array
+
+            ```jsx
+            const magicSquare = [[2, 7, 6], [9, 5, 1], [4, 3, 8]]
+            ```
+
+
+        - Code
+
+            ```jsx
+            let sum = 0;
+
+            for (let i = 0; i < magicSquare.length; i++) {
+              // console.log(magicSquare[i]);
+              let row = magicSquare[i];
+              console.log(row);
+              for (let j = 0; j < row.length; j++) {
+                // console.log(row[j]);
+                sum += row[j]
+                console.log(sum);
+              }
+              console.log(`${row} summed to ${sum}`);
+            }
+            ```
+
+            - Explanations
+                1. **Initialization**:
+
+                    ```jsx
+                    let sum = 0;
+                    ```
+
+                    A variable `sum` is initialized to `0`. This will keep track of the cumulative sum of all the elements in the `magicSquare` array.
+
+                2. **Outer Loop**:
+
+                    ```jsx
+                    for (let i = 0; i < magicSquare.length; i++) {
+                    ```
+
+                    - This `for` loop iterates over each row of the `magicSquare` array.
+                    - `magicSquare.length` is `3`, so `i` will take values `0`, `1`, and `2`.
+                3. **Accessing Each Row**:
+
+                    ```jsx
+                    let row = magicSquare[i];
+                    console.log(row);
+                    ```
+
+                    - In each iteration, the `i-th` row is accessed and stored in the variable `row`.
+                    - The row is then logged to the console.
+                4. **Inner Loop**:
+
+                    ```jsx
+                    for (let j = 0; j < row.length; j++) {
+                    ```
+
+                    - This `for` loop iterates over each element of the current `row`.
+                    - `row.length` is `3`, so `j` will take values `0`, `1`, and `2`.
+                5. **Summing Elements**:
+
+                    ```jsx
+                    sum += row[j];
+                    console.log(sum);
+                    ```
+
+                    - For each element in the row, `row[j]` retrieves the `j-th` element.
+                    - This element is added to `sum`.
+                    - The current value of `sum` is logged to the console after each addition.
+                6. **Logging Row Sum**:
+
+                    ```jsx
+                    console.log(`${row} summed to ${sum}`);
+                    ```
+
+                    After the inner loop completes for the current row, the entire row and the cumulative sum (`sum`) are logged to the console in a formatted string.
+
+
+            [Detailed Walkthrough](https://www.notion.so/Detailed-Walkthrough-32a46983d8b347baa3fb3f2d2fefc145?pvs=21)
+
+
+        - Output
+
+            ![for_vs_for-of_01.jpg](./images/for_vs_for-of_01.jpg)
+
+
+    - This code
+    for (let i = 0; i < words1.length; i++) {
+      for (let j = 0; j < words2.length; j++) {
+        console.log(`${words1[i]}${words2[j]}`);
+      }
+    }
+
+    will give this result
+    mailbox
+    mailshake
+    mailtub
+    mailberry
+    mealbox
+    mealshake
+    mealtub
+    .
+    .
+    .
+    (same with ‘bath’ and ‘black’).
+    What is the reason?
+
+        **Detailed Walkthrough**
+
+        1. **First Iteration of Outer Loop (`i = 0`)**:
+
+            `words1[i]` is `words1[0]` which is `"mail"`.
+
+        2. **First Iteration of Inner Loop (`j = 0`)**:
+
+            `words2[j]` is `words2[0]` which is `"box"`.
+
+            Concatenation: `"mail" + "box"` results in `"mailbox"`.
+
+            Logs: `mailbox`
+
+        3. **Second Iteration of Inner Loop (`j = 1`)**:
+
+            `words2[j]` is `words2[1]` which is `"shake"`.
+
+            Concatenation: `"mail" + "shake"` results in `"mailshake"`.
+
+            Logs: `mailshake`
+
+        4. **Third Iteration of Inner Loop (`j = 2`)**:
+
+            `words2[j]` is `words2[2]` which is `"tub"`.
+
+            Concatenation: `"mail" + "tub"` results in `"mailtub"`.
+
+            Logs: `mailtub`
+
+        5. **Fourth Iteration of Inner Loop (`j = 3`)**:
+
+            `words2[j]` is `words2[3]` which is `"berry"`.
+
+            Concatenation: `"mail" + "berry"` results in `"mailberry"`.
+
+            Logs: `mailberry`
+
+        6. **Second Iteration of Outer Loop (`i = 1`)**:
+
+            `words1[i]` is `words1[1]` which is `"meal"`.
+
+        7. **First Iteration of Inner Loop (`j = 0`)**:
+
+            `words2[j]` is `words2[0]` which is `"box"`.
+
+            Concatenation: `"meal" + "box"` results in `"mealbox"`.
+
+            Logs: `mealbox`
+
+        8. **Second Iteration of Inner Loop (`j = 1`)**:
+
+            `words2[j]` is `words2[1]` which is `"shake"`.
+
+            Concatenation: `"meal" + "shake"` results in `"mealshake"`.
+
+            Logs: `mealshake`
+
+        9. **Third Iteration of Inner Loop (`j = 2`)**:
+
+            `words2[j]` is `words2[2]` which is `"tub"`.
+
+            Concatenation: `"meal" + "tub"` results in `"mealtub"`.
+
+            Logs: `mealtub`
+
+        10. **Fourth Iteration of Inner Loop (`j = 3`)**:
+
+            `words2[j]` is `words2[3]` which is `"berry"`.
+
+            Concatenation: `"meal" + "berry"` results in `"mealberry"`.
+
+            Logs: `mealberry`
+
+        11. **Third Iteration of Outer Loop (`i = 2`)**:
+
+            `words1[i]` is `words1[2]` which is `"bath"`.
+
+        12. **First Iteration of Inner Loop (`j = 0`)**:
+
+            `words2[j]` is `words2[0]` which is `"box"`.
+
+            Concatenation: `"bath" + "box"` results in `"bathbox"`.
+
+            Logs: `bathbox`
+
+        13. **Second Iteration of Inner Loop (`j = 1`)**:
+
+            `words2[j]` is `words2[1]` which is `"shake"`.
+
+            Concatenation: `"bath" + "shake"` results in `"bathshake"`.
+
+            Logs: `bathshake`
+
+        14. **Third Iteration of Inner Loop (`j = 2`)**:
+
+            `words2[j]` is `words2[2]` which is `"tub"`.
+
+            Concatenation: `"bath" + "tub"` results in `"bathtub"`.
+
+            Logs: `bathtub`
+
+        15. **Fourth Iteration of Inner Loop (`j = 3`)**:
+
+            `words2[j]` is `words2[3]` which is `"berry"`.
+
+            Concatenation: `"bath" + "berry"` results in `"bathberry"`.
+
+            Logs: `bathberry`
+
+        16. **Fourth Iteration of Outer Loop (`i = 3`)**:
+
+            `words1[i]` is `words1[3]` which is `"black"`.
+
+        17. **First Iteration of Inner Loop (`j = 0`)**:
+
+            `words2[j]` is `words2[0]` which is `"box"`.
+
+            Concatenation: `"black" + "box"` results in `"blackbox"`.
+
+            Logs: `blackbox`
+
+        18. **Second Iteration of Inner Loop (`j = 1`)**:
+
+            `words2[j]` is `words2[1]` which is `"shake"`.
+
+            Concatenation: `"black" + "shake"` results in `"blackshake"`.
+
+            Logs: `blackshake`
+
+        19. **Third Iteration of Inner Loop (`j = 2`)**:
+
+            `words2[j]` is `words2[2]` which is `"tub"`.
+
+            Concatenation: `"black" + "tub"` results in `"blacktub"`.
+
+            Logs: `blacktub`
+
+        20. **Fourth Iteration of Inner Loop (`j = 3`)**:
+
+            `words2[j]` is `words2[3]` which is `"berry"`.
+
+            Concatenation: `"black" + "berry"` results in `"blackberry"`.
+
+            Logs: `blackberry`
+
+
+- Given two arrays
+
+const words1 = ['mail', 'meal', 'bath', 'black'];
+const words2 = ['box', 'shake', 'tub', 'berry'];
+
+What is the difference between these two codes?
+
+for (let i = 0; i < words1.length; i++) {
+  for (let j = 0; j < words2.length; j++) {
+    console.log(${words1[i]}${words2[j]})
+  }
+}
+
+and
+
+for (let i = 0; i < words1.length; i++) {
+  console.log(${words1[i]}${words2[i]});
+}
+    - First code
+
+        ```jsx
+        for (let i = 0; i < words1.length; i++) {
+          for (let j = 0; j < words2.length; j++) {
+            console.log(`${words1[i]}${words2[j]}`);
+          }
+        }
+        ```
+
+        - Explanation:
+            - **Nested Loop:** There is an outer loop iterating over each element in `words1`, and for each iteration of the outer loop, the inner loop iterates over each element in `words2`.
+            - **Combinations:** This results in every element of `words1` being combined with every element of `words2`.
+        - Output:
+
+            This code will generate 16 outputs (4 elements from `words1` × 4 elements from `words2`):
+
+            ![for_vs_for-of_04.jpg](./images/for_vs_for-of_04.jpg)
+
+
+    - Second code
+
+        ```jsx
+        for (let i = 0; i < words1.length; i++) {
+          console.log(`${words1[i]}${words2[i]}`);
+        }
+        ```
+
+        - Explanation:
+            - **Single Loop:** There is only one loop iterating over the elements of `words1` (and by implication, `words2`).
+            - **Index-Based Combination:** For each iteration, it combines the `i`th element of `words1` with the `i`th element of `words2`.
+        - Output:
+
+            This code will generate 4 outputs (each index of `words1` combined with the same index of `words2`)
+
+            ![for_vs_for-of_05.jpg](./images/for_vs_for-of_05.jpg)
