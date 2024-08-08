@@ -335,6 +335,200 @@ Notes:
     - You would not need to check “indexOf” with “-1”
     - The “return” statements would be inverted.
 
+### Function Challenge 4: Get Playing Card
+
+Write a “getCard” function which returns a random playing card object.
+
+Example:
+
+```jsx
+{
+  value: "K",
+  suit: "clubs"
+}
+```
+
+Instructions:
+
+- Pick a random value
+
+    1,2,3,4,5,6,7,8,9,10,J,Q,K,A
+
+- Pick a random suit
+
+    hearts, diamonds, spaces, clubs
+
+- Return both in an object
+
+    ```jsx
+    {
+      value: "K",
+      suit: "clubs"
+    }
+    ```
+
+
+- This program is divided into two functions
+    - pick() - pick a random card.
+    - getCard() - where the cards can be accessed by reusing function pick()
+
+    ```jsx
+    function pick (arr) {
+      const idx = Math.floor(Math.random() * arr.length);
+      return arr[idx];
+    }
+    ```
+
+    ```jsx
+    function getCard () {
+
+      // The values
+      const values = ["1","2","3","4","5","6","7","8","9","10","J","Q","K","A"];
+
+      const value = pick (values); // Reuse function pick
+
+      // The suites
+      const suites = ["hearts", "diamonds", "spaces", "clubs"];
+
+      const suite = pick(suites); // Reuse function pick
+
+      return { value: value, suite: suite};
+    }
+    ```
+
+    - One step further is to reuse “pick” right where you return “value” and “suite”
+
+        From
+
+        ```jsx
+        return { value: value, suite: suite};
+        ```
+
+        to
+
+        ```jsx
+        return { value: pick (values), suite: pick(suites)};
+        ```
+
+        What “pick” function does is to generate a random number
+
+        ![playing_card_04.jpg](./images/playing_card_04.jpg)
+
+        So the function “getCard” can be shortened
+
+        To differentiate the code before and after “return” using “pick” function for , we will call this function “getCard1”
+
+        ```jsx
+        function getCard1 () {
+
+          // The values
+          const values = ["1","2","3","4","5","6","7","8","9","10","J","Q","K","A"];
+
+          // The suites
+          const suites = ["hearts", "diamonds", "spaces", "clubs"];
+
+          return { value: pick (values), suite: pick(suites)};
+        }
+        ```
+
+        Both “getCard” and “getCard1” functions return the same results
+
+        ![playing_card_06.jpg](./images/playing_card_06.jpg)
+
+
+Notes:
+
+- The highest number for “valIdx” is only 13 but there are 14 elements in the array. Why?
+
+    ![playing_card_01.jpg](./images/playing_card_01.jpg)
+
+    - There are 14 elements in the array “value”, “valIdx” will go from 0 to 13.
+    - “valIdx” is for accessing random indices in the array “values”.
+
+    E.g. say “valIdx = 3”, that means “values[3]” which is the value 4 in the array “values”.
+
+- The highest number for “suitesIdx” is only 3 but there are 4 elements in the array. Why?
+    - There are 4 elements in the array “suites”, “suitesIdx” will go from 0 to 3.
+    - “suitesIdx” is for accessing random indices in the array “suites”.
+
+        E.g. say “suitesIdx = 1”, that means “suites[1]” which is the value “diamonds” in the array “suites”.
+
+- How about looping through the array “values” instead of using Math.floor(Math.random())?
+- You can only “return” once, if you return twice then all the codes after the first “return” will be unreachable. Why?
+
+    The [**return**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return) statement ends function execution.
+
+    Read more at [**Warning: unreachable code after return statement**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Stmt_after_return)
+
+- You changed “idx” to “valueIdx” for Math.floor(Math.random() * values.length). What is the reason?
+
+    From
+
+    ```jsx
+    const idx = Math.floor(Math.random() * values.length)
+    ```
+
+    to
+
+    ```jsx
+    const valIdx = Math.floor(Math.random() * values.length)
+    ```
+
+    The reason was simply to name the counter different for the arrays “values” and “suites” as they use the same piece of code for generating random numbers
+
+    ```jsx
+    // The values
+    const values = ["1","2","3","4","5","6","7","8","9","10","J","Q","K","A"];
+
+    const valIdx = Math.floor(Math.random() * values.length); // --- same
+    const value = values[valIdx];
+
+    // The suites
+    const suites = ["hearts", "diamonds", "spaces", "clubs"];
+
+    const suitesIdx = Math.floor(Math.random() * suites.length); // --- same
+    const suite = suites[suitesIdx];
+    ```
+
+
+You can also combine the two functions into one big function
+
+```jsx
+function getPlayingCard () {
+
+  // The values
+  const values = ["1","2","3","4","5","6","7","8","9","10","J","Q","K","A"];
+
+  const valIdx = Math.floor(Math.random() * values.length);
+  const value = values[valIdx];
+
+  // The suites
+  const suites = ["hearts", "diamonds", "spaces", "clubs"];
+
+  const suitesIdx = Math.floor(Math.random() * suites.length);
+  const suite = suites[suitesIdx];
+
+  return { value: value, suite: suite};
+}
+```
+
+- However, the codes for “values” and “suites” are quite identical and can be replaced by the same function (which is “pick” function as seen above).
+
+
+    values
+
+    ```jsx
+    const valIdx = Math.floor(Math.random() * values.length);
+    const value = values[valIdx];
+    ```
+
+    suites
+
+    ```jsx
+    const suitesIdx = Math.floor(Math.random() * suites.length);
+    const suite = suites[suitesIdx];
+    ```
+
 ### “break” keyword vs. “return” statement (self notes)
 
 #### [return](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return) Statement
