@@ -1399,3 +1399,88 @@ for (let i = 0; i < words1.length; i++) {
         💡 There is no simple way to just access the element without having to call Object.keys() or Object.values()
 
         </aside>
+
+## for-in-loops
+
+> The **`for...in`** statement iterates over all [enumerable string properties](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Enumerability_and_ownership_of_properties) of an object (ignoring properties keyed by [symbols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol)), including inherited enumerable properties.
+>
+
+- Using for….in with object
+
+    Given the object
+
+    ```jsx
+    const jeopardyWinnings = {
+      regularPlay: 2522700,
+      watsonChallenge: 300000,
+      tournamentOfChampions: 500000,
+      battleOfTheDecades: 100000
+    }
+    ```
+
+    - Print out the keys and values
+
+        ```jsx
+        for (let prop in jeopardyWinnings) {
+          // keys
+          console.log(prop);
+          // values
+          console.log(jeopardyWinnings[prop]);
+        }
+        ```
+
+        Note: “prop” (or property) can represent any kind of data you want (human, username, email,…..you name it)
+
+
+    ![for-in_loops_01.jpg](./images/for-in_loops_01.jpg)
+
+    - Calculate and print out the total earnings (of Ken Jennings)
+
+        ```jsx
+        let total = 0;
+
+        for (let prop in jeopardyWinnings) {
+          total += jeopardyWinnings[prop]
+        }
+
+        console.log(`Total earnings of Ken Jennings is ${total}`);
+        ```
+
+        Output:
+
+        ```jsx
+        Total earnings of Ken Jennings is 3422700
+        ```
+
+
+- Using for….in with array
+
+    ```jsx
+    for (let k in [88, 99, 77, 66]) {
+      console.log(k); // 0, 1, 2, 3.
+    }
+    ```
+
+    - Output
+
+        ![for-in_loops_02.jpg](./images/for-in_loops_02.jpg)
+
+
+    - When you input the array [88, 99, 77, 66] in the dev console
+
+        You can see that 0, 1, 2, 3 are the keys of the array
+
+        ![for-in_loops_03.jpg](./images/for-in_loops_03.jpg)
+
+
+    - Summary
+
+        When you use the "for...in" loop for an array, you are NOT looping over the actual elements but rather the properties.
+
+        > the values *do* NOT matter!
+        >
+
+<aside>
+💡 "for...in" is not useful to use with array because it will only loop over the keys
+
+</aside>
