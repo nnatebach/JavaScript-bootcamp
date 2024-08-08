@@ -334,3 +334,67 @@ Notes:
 
     - You would not need to check “indexOf” with “-1”
     - The “return” statements would be inverted.
+
+### “break” keyword vs. “return” statement (self notes)
+
+#### [return](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return) Statement
+
+- **Purpose:** The `return` statement is used to end the execution of a function and optionally return a value from that function.
+- **Usage Context:** It is used within a function body.
+- **Effect:** It stops the execution of the function and returns control back to the calling context. If a value is provided, it returns that value to the caller.
+
+```jsx
+function sum(a, b) {
+  return a + b; // Ends the function execution and returns the sum of a and b
+  console.log("This will not be executed"); // This line will never be reached
+}
+
+console.log(sum(2, 3)); // Outputs: 5
+```
+
+#### [break](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/break) Keyword
+
+- **Purpose:** The `break` keyword is used to terminate the execution of a loop or switch statement.
+- **Usage Context:** It is used within loops (`for`, `while`, `do...while`) and `switch` statements.
+- **Effect:** It immediately exits the loop or switch statement, transferring control to the code immediately following the loop or switch.
+
+```jsx
+for (let i = 0; i < 10; i++) {
+  if (i === 3) {
+    break; // Exits the loop when i is 3
+  }
+  console.log(i); // Outputs: 0, 1, 2
+}
+```
+
+#### Comparison and Usage
+
+- **Ending Function Execution:** Only the `return` statement can end the execution of a function.
+- **Exiting Loops and Switch Statements:** Only the `break` keyword can be used to exit loops and switch statements.
+
+#### Difference Illustration
+
+```jsx
+function findNumber(arr, target) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === target) {
+      return i; // Ends the function execution and returns the index
+    }
+  }
+  return -1; // Ends the function execution if the target is not found
+}
+
+console.log(findNumber([1, 2, 3, 4, 5], 3)); // Outputs: 2
+
+for (let i = 0; i < 5; i++) {
+  if (i === 2) {
+    break; // Exits the loop when i is 2
+  }
+  console.log(i); // Outputs: 0, 1
+}
+```
+
+#### Conclusion
+
+- Use `return` to end function execution and optionally return a value.
+- Use `break` to exit loops and switch statements.
