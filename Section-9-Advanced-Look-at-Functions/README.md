@@ -15,7 +15,7 @@
 
     - Output
 
-        ![scope_01.jpg](./images/scope_01.jpg)
+        ![scope_01.jpg](./images/function_scope_01.jpg)
 
 
     - Reason: “person” is defined inside the function “lol” and canNOT be accessed from outside the function.
@@ -42,7 +42,7 @@
 
     - Output
 
-        ![scope_02.jpg](./images/scope_02.jpg)
+        ![scope_02.jpg](./images/function_scope_02.jpg)
 
 
     - Explanation
@@ -65,7 +65,7 @@
 
     - Output
 
-    ![scope_03.jpg](./images/scope_03.jpg)
+    ![scope_03.jpg](./images/function_scope_03.jpg)
 
     - Reason:
         - `let bird = ‘golden pleasant’` is declared within the function scope of *birdWatch()*, you can call the function but you can NOT manipulate the variable from outside the scope.
@@ -73,4 +73,4 @@
 
     - Illustration
 
-        ![scope_04.jpg](./images/scope_04.jpg)
+        ![scope_04.jpg](./images/function_scope_04.jpg)
