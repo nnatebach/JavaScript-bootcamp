@@ -570,3 +570,34 @@ It is a one way relationship!
     - **movie** is NOT defined inside **inner()** either (it is commented out), the function looks for the further **movie** in the next nearest parent function (**outer()**).
     - In **outer()** function, **movie** is defined as “Amadeus”
     - “Amadeus” is printed out as the result of executing **outer()**
+
+### Function Expressions
+
+Ways of creating a function: Read more at [Function Definitions](https://www.w3schools.com/js/js_function_definition.asp)
+
+- Anonymous Function (Function Declaration)
+
+    ```jsx
+    function add (x, y) {
+      return x + y;
+    }
+    ```
+
+    ![function_expression_01.jpg](./images/function_expression_01.jpg)
+
+    ![function_expression_02.jpg](./images/function_expression_02.jpg)
+
+- Function Expressions
+
+    ```jsx
+    const sum = function (x, y) {
+      return x + y;
+    }
+    ```
+
+    ![function_expression_03.jpg](./images/function_expression_03.jpg)
+
+    ![function_expression_04.jpg](./images/function_expression_04.jpg)
+
+
+Same results just different syntaxes and different ways of referencing
