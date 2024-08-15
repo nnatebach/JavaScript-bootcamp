@@ -441,3 +441,132 @@
 ![block_scope_15.jpg](./images/block_scope_15.jpg)
 
 Further reading: [**What's New In DevTools (Chrome 80)**](https://developer.chrome.com/blog/new-in-devtools-80/)
+
+### Lexical Scope
+
+- Example 1:
+
+    ```jsx
+    function outer () {
+      let movie = 'Amadeus';
+
+      function inner () {
+        console.log(movie.toUpperCase())
+      }
+      inner();
+    }
+    ```
+
+    ![lexical_scope_01.jpg](./images/lexical_scope_01.jpg)
+
+    Demonstration
+
+    - If you execute **inner()** from inside **outer()**, it will successfully log out “AMADEUS” in CALL CAPS when you call the **outer()** function.
+    - If you try to call **inner()** from outside the **outer()** function, you will not have access to it
+
+    ![lexical_scope_02.jpg](./images/lexical_scope_02.jpg)
+
+    - With/Without the **inner()** executed from inside the **outer()** function, you will not have the access to the function from outside of the **outer()** function.
+
+    Explanation:
+
+    - When you execute **outer()**, the function **inner()** is called
+    - **inner()** then console.log **movie**
+    - **movie** is not defined within the function scope **inner()**
+    - Therefore **inner()** will look for a different **movie** from the scope of the NEAREST parent function, the **outer()** scope.
+
+    ```jsx
+    function outer () {
+      let movie = 'Amadeus';
+
+      function inner () {
+        let movie = 'The Shining';
+        console.log(movie.toUpperCase())
+      }
+      inner();
+    }
+    ```
+
+    ![lexical_scope_04.jpg](./images/lexical_scope_04.jpg)
+
+    Explanation:
+
+    - When you execute **outer()**, the function **inner()** is called
+    - **movie** is defined as “The Shining” within the function scope **inner()**
+    - **inner()** then console.log **movie** (which is found within itself)
+    - “The Shining” will be printed out as the result of calling the function **inner()**.
+
+**Note:** “Amadeus” would have been printed out if **movie** had not been defined within **inner()**.
+
+**inner()** will ONLY look for a further variable **movie** if it does NOT include one.
+
+<aside>
+💡 Lexical scope:
+Nested functions are lexically bound to the scope of their parent or their outer functions.
+It is a one way relationship!
+
+</aside>
+
+- Example 2:
+
+    Lexical scope does NOT work from parent to nested (child) function
+
+    ```jsx
+    function outer () {
+      let movie = 'Amadeus';
+
+      function inner () {
+        let x = 10
+        console.log(movie.toUpperCase())
+      }
+      inner();
+      console.log(x)
+    }
+    ```
+
+    ![lexical_scope_03.jpg](./images/lexical_scope_03.jpg)
+
+    **x** is declared within **inner()**, you can NOT access it from outside the function.
+
+
+- Example 3: Two layered nested functions
+
+    ```jsx
+    function outer () {
+      let movie = "Amadeus";
+
+      function inner () {
+        let movie = "The Shinning";
+        console.log(movie.toUpperCase())
+
+        function extraInner () {
+          console.log(movie.toUpperCase())
+        }
+        extraInner();
+      }
+      inner();
+    }
+    ```
+
+    ![lexical_scope_05.jpg](./images/lexical_scope_05.jpg)
+
+    Explanation:
+
+    - When **outer()** is executed then **inner()** is called
+    - When **inner()** is executed then **extraInner()** is called
+    - When **extraInner()** is called, **movie** is logged out
+    - **movie** is NOT defined inside **extraInner()**, the function looks for the further **movie** in the nearest parent function.
+    - In **inner()** function, **movie** is defined as “The Shining”
+    - “The Shining” is printed out as the result of executing **outer()**
+
+    ![lexical_scope_06.jpg](./images/lexical_scope_06.jpg)
+
+
+- Explanation
+    - When **outer()** is executed then **inner()** is called
+    - When **inner()** is executed then **extraInner()** is called
+    - When **extraInner()** is called, **movie** is logged out
+    - **movie** is NOT defined inside **extraInner()**, the function looks for the further **movie** in the nearest parent function (**inner()**).
+    - **movie** is NOT defined inside **inner()** either (it is commented out), the function looks for the further **movie** in the next nearest parent function (**outer()**).
+    - In **outer()** function, **movie** is defined as “Amadeus”
+    - “Amadeus” is printed out as the result of executing **outer()**
