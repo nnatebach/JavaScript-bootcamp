@@ -601,3 +601,188 @@ Ways of creating a function: Read more at [Function Definitions](https://www.w3s
 
 
 Same results just different syntaxes and different ways of referencing
+
+### Hoisting
+
+> MDN docs at [https://developer.mozilla.org/en-US/docs/Glossary/Hoisting](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting)
+>
+
+Read more at [**JavaScript Hoisting: What It Is And Why It Was Implemented**](https://dev.to/jwwnz/javascript-hoisting-what-it-is-and-why-it-was-implemented-51ep)
+
+- Hoisting with VAR
+
+    ```jsx
+    console.log(animal);
+    // var animal = 'Tapir'
+    ```
+
+    ![hoisting_02.jpg](./images/hoisting_02.jpg)
+
+    ```jsx
+    console.log(animal); // undefined
+    var animal = 'Tapir'
+    console.log(animal); // Tapir
+    ```
+
+    ![hoisting_01.jpg](./images/hoisting_01.jpg)
+
+    This is an odd behavior
+
+    - JavaScript see the VAR declaration first
+    - It will run the VAR declaration first
+    - Then it will fill the value with “Tapir”
+
+    This is NOT what you want, you will probably want **animal** to be defined and to have a value first before you can print it out rather than having it printed out before it is even defined.
+
+
+- Hoisting with LET
+
+    ```jsx
+    console.log(shrimp);
+    let shrimp = 'Harlequin Shrimp';
+    ```
+
+    ![hoisting_03.jpg](./images/hoisting_03.jpg)
+
+    Variable declarations made with **let** are NOT hoisted as they were made with VAR and this is one of the main reasons that you use **let** aside from block scope.
+
+
+- Hoisting with FUNCTIONS
+    - Function Statements
+
+        ```jsx
+        howl();
+
+        function howl () {
+          console.log('AWOOOOO')
+        }
+        ```
+
+        The function is **called before** being **defined**
+
+        ```jsx
+        function howl () {
+          console.log('AWOOOOO')
+        }
+
+        howl()
+        ```
+
+        The function is **called after** being **defined**.
+
+        This is what you usually do.
+
+        Yet the same result for both ways
+
+        ![hoisting_04.jpg](./images/hoisting_04.jpg)
+
+        ![hoisting_05.jpg](./images/hoisting_05.jpg)
+
+        Explanation:
+
+        - JavaScript interpreter runs across these lines first
+
+            ```jsx
+            function howl () {
+              console.log('AWOOOOO')
+            }
+            ```
+
+        - Just so that you can call
+
+            ```jsx
+            howl();
+            ```
+
+
+        This is unexpected yet it is how the JavaScript interpreter works.
+
+
+    - Function Expressions
+        - VAR
+
+            Hosting does NOT work the same with Function Expressions, however.
+
+            ```jsx
+            hoot();
+
+            var hoot = function () {
+              console.log('HOOOO HOOOOO')
+            };
+            ```
+
+            ![hoisting_06.jpg](./images/hoisting_06.jpg)
+
+            You must first define the function, otherwise you will NOT be able to call the function
+
+            ```jsx
+            var hoot = function () {
+              console.log('HOOOO HOOOOO')
+            };
+
+            hoot();
+            ```
+
+            ![hoisting_07.jpg](./images/hoisting_07.jpg)
+
+            ```jsx
+            console.log(hoot);
+
+            var hoot = function () {
+                console.log('HOOOO HOOOOO')
+            }
+            ```
+
+            ![hoisting_10.jpg](./images/hoisting_10.jpg)
+
+            Explanation:
+
+            - It is the same thing that you saw with **animal**
+            - The variable declaration **var hoot** is hoisted.
+            - JavaScript knows there is a variable called **hoot** but it does NOT know the value, so it sets the value to “undefined”.
+            - If you execute **hoot()**, it will try to call “undefined” which you cannot do.
+
+            <aside>
+            💡 The **variable** is *hoisted*
+            The **value** is NOT
+
+            </aside>
+
+        - LET
+
+            Function expressions declared with **let** is NOT hoisted!
+
+            ```jsx
+            hoot();
+
+            let hoot = function () {
+                console.log('HOOOO HOOOOO')
+            }
+            ```
+
+            <aside>
+            💡 **Note:** Due to different environmental setups, running the code in different places might not give the same error of “*Uncaught ReferenceError: Cannot access 'hoot' before initialization*””
+
+            </aside>
+
+            - Tested in Chrome Dev Console
+
+            ![hoisting_09.jpg](./images/hoisting_09.jpg)
+
+            - Tested in JSFIDDLE
+
+                ![hoisting_11.jpg](./images/hoisting_11.jpg)
+
+                ![hoisting_12.jpg](./images/hoisting_12.jpg)
+
+            - Tested in VS Code
+
+                ![hoisting_13.jpg](./images/hoisting_13.jpg)
+
+                ![hoisting_14.jpg](./images/hoisting_14.jpg)
+
+                - What is the reason for the error “*Uncaught ReferenceError: Cannot access 'hoot' before initialization*”
+
+                    You are storing the function declared in the **let** variable, it is NOT hoisted at all.
+
+                    You got the error because you can NOT access **hoot** before it exists which makes sense and you should NOT be able to do that.
