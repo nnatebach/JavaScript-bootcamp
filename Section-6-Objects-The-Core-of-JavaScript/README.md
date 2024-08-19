@@ -140,3 +140,144 @@ Suppose these are the information you need to store for Lucy
             ```jsx
             let data = { a: 1, b: 2, c: 3, }
             ```
+
+### Accessing Object Properties
+
+- Fixed data
+    - Key that starts with number
+
+        ```jsx
+        const numbers = {
+          100: 'One hundred',
+          16: 'sixteen'
+        }
+        ```
+
+        ![acessing_object_properties_01.jpg](./images/acessing_object_properties_01.jpg)
+
+        ```jsx
+        numbers[100]
+        ```
+
+        Explanation:
+
+        - When you put “100” inside of the bracket, JavaScript converts “100” to a string and tries to find if there is a matching key of the property in the object.
+        - And if there is a matching key, JavaScript will give the matching value for that key of the object property.
+        - The way to verify if JavaScript tries to look for the matching string of the key in the object property is that if you make the key inside the brackets to be a string, you will get the same result.
+
+            ```jsx
+            numbers['100']
+            ```
+
+            ![acessing_object_properties_02.jpg](./images/acessing_object_properties_02.jpg)
+
+
+        <aside>
+        💡 You canNOT have variable that starts with numbers
+        But you CAN have key that starts with numbers
+
+        </aside>
+
+        - Variable that starts with number
+
+            ![acessing_object_properties_04.jpg](./images/acessing_object_properties_04.jpg)
+
+            The error means that the variable has an invalid name.
+
+        - Key that starts with number
+
+            ```jsx
+            const numbers = {
+              100: 'One hundred',
+              16: 'sixteen'
+              '76trombones': 'songs'
+            }
+            ```
+
+            ![acessing_object_properties_05.jpg](./images/acessing_object_properties_05.jpg)
+
+            Accessing key that starts with number
+
+            ```jsx
+            numbers['76trombones']
+            ```
+
+            ![acessing_object_properties_06.jpg](./images/acessing_object_properties_06.jpg)
+
+    - Key that contains space
+
+        ```jsx
+        const numbers = {
+          100: 'One hundred',
+          16: 'sixteen'
+          '76 trombones': 'songs'
+        }
+        ```
+
+        ![acessing_object_properties_08.jpg](./images/acessing_object_properties_08.jpg)
+
+        Accessing the key with square brackets
+
+        ```jsx
+        numbers['76 trombones']
+        ```
+
+        ![acessing_object_properties_09.jpg](./images/acessing_object_properties_09.jpg)
+
+
+- Dynamic data
+
+    ```jsx
+    const palette = {
+      red: '#eb4d4b',
+      yellow: '#f9ca24',
+      blue: '#30336b'
+    }
+    ```
+
+    - Using dot notation
+
+        ```jsx
+        palette.blue // '#30336b'
+        palette.yellow // '#f9ca24'
+        ```
+
+        ![acessing_object_properties_10.jpg](./images/acessing_object_properties_10.jpg)
+
+
+    - Using square brackets
+
+        ```jsx
+        palette['yellow']
+        ```
+
+        ![acessing_object_properties_11.jpg](./images/acessing_object_properties_11.jpg)
+
+        Without the quotes, JavaScript will NOT recognize the key
+
+        ![acessing_object_properties_12.jpg](./images/acessing_object_properties_12.jpg)
+
+        You can also do concatenate the letters for the key inside the square brackets
+
+        ```jsx
+        palette['bl' + 'ue']
+        ```
+
+        ![acessing_object_properties_13.jpg](./images/acessing_object_properties_13.jpg)
+
+
+<aside>
+💡 **Notice:** You will ALWAYS need to put the key that starts with number and / or contains space in quotes when you create it as an object property and when you want to access it with the square brackets.
+
+</aside>
+
+- Variable assigned key
+
+    If you already assign the key to a variable, you can access that key through the variable without the quotes in square brackets
+
+    ```jsx
+    let mysteryColor = 'blue'
+    palette[mysteryColor] // '#30336b'
+    ```
+
+    ![acessing_object_properties_14.jpg](./images/acessing_object_properties_14.jpg)
