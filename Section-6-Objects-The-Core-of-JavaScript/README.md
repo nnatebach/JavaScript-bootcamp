@@ -153,7 +153,7 @@ Suppose these are the information you need to store for Lucy
         }
         ```
 
-        ![acessing_object_properties_01.jpg](./images/acessing_object_properties_01.jpg)
+        ![acessing_object_properties_01.jpg](./images/accessing_object_properties_01.jpg)
 
         ```jsx
         numbers[100]
@@ -169,7 +169,7 @@ Suppose these are the information you need to store for Lucy
             numbers['100']
             ```
 
-            ![acessing_object_properties_02.jpg](./images/acessing_object_properties_02.jpg)
+            ![acessing_object_properties_02.jpg](./images/accessing_object_properties_02.jpg)
 
 
         <aside>
@@ -180,7 +180,7 @@ Suppose these are the information you need to store for Lucy
 
         - Variable that starts with number
 
-            ![acessing_object_properties_04.jpg](./images/acessing_object_properties_04.jpg)
+            ![acessing_object_properties_04.jpg](./images/accessing_object_properties_04.jpg)
 
             The error means that the variable has an invalid name.
 
@@ -194,7 +194,7 @@ Suppose these are the information you need to store for Lucy
             }
             ```
 
-            ![acessing_object_properties_05.jpg](./images/acessing_object_properties_05.jpg)
+            ![acessing_object_properties_05.jpg](./images/accessing_object_properties_05.jpg)
 
             Accessing key that starts with number
 
@@ -202,7 +202,7 @@ Suppose these are the information you need to store for Lucy
             numbers['76trombones']
             ```
 
-            ![acessing_object_properties_06.jpg](./images/acessing_object_properties_06.jpg)
+            ![acessing_object_properties_06.jpg](./images/accessing_object_properties_06.jpg)
 
     - Key that contains space
 
@@ -214,7 +214,7 @@ Suppose these are the information you need to store for Lucy
         }
         ```
 
-        ![acessing_object_properties_08.jpg](./images/acessing_object_properties_08.jpg)
+        ![acessing_object_properties_08.jpg](./images/accessing_object_properties_08.jpg)
 
         Accessing the key with square brackets
 
@@ -222,7 +222,7 @@ Suppose these are the information you need to store for Lucy
         numbers['76 trombones']
         ```
 
-        ![acessing_object_properties_09.jpg](./images/acessing_object_properties_09.jpg)
+        ![acessing_object_properties_09.jpg](./images/accessing_object_properties_09.jpg)
 
 
 - Dynamic data
@@ -242,7 +242,7 @@ Suppose these are the information you need to store for Lucy
         palette.yellow // '#f9ca24'
         ```
 
-        ![acessing_object_properties_10.jpg](./images/acessing_object_properties_10.jpg)
+        ![acessing_object_properties_10.jpg](./images/accessing_object_properties_10.jpg)
 
 
     - Using square brackets
@@ -251,11 +251,11 @@ Suppose these are the information you need to store for Lucy
         palette['yellow']
         ```
 
-        ![acessing_object_properties_11.jpg](./images/acessing_object_properties_11.jpg)
+        ![acessing_object_properties_11.jpg](./images/accessing_object_properties_11.jpg)
 
         Without the quotes, JavaScript will NOT recognize the key
 
-        ![acessing_object_properties_12.jpg](./images/acessing_object_properties_12.jpg)
+        ![acessing_object_properties_12.jpg](./images/accessing_object_properties_12.jpg)
 
         You can also do concatenate the letters for the key inside the square brackets
 
@@ -263,7 +263,7 @@ Suppose these are the information you need to store for Lucy
         palette['bl' + 'ue']
         ```
 
-        ![acessing_object_properties_13.jpg](./images/acessing_object_properties_13.jpg)
+        ![acessing_object_properties_13.jpg](./images/accessing_object_properties_13.jpg)
 
 
 <aside>
@@ -280,4 +280,4 @@ Suppose these are the information you need to store for Lucy
     palette[mysteryColor] // '#30336b'
     ```
 
-    ![acessing_object_properties_14.jpg](./images/acessing_object_properties_14.jpg)
+    ![acessing_object_properties_14.jpg](./images/accessing_object_properties_14.jpg)
