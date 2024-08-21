@@ -281,3 +281,79 @@ Suppose these are the information you need to store for Lucy
     ```
 
     ![acessing_object_properties_14.jpg](./images/accessing_object_properties_14.jpg)
+
+### Adding and Updating Properties
+
+Given an empty Object
+
+```jsx
+const userReviews = {}
+```
+
+![adding_updating_property_01.jpg](./images/adding_updating_property_01.jpg)
+
+- Add the property:
+    - Using **dot notation** for ‘mrSmith78’ → 3.5
+    - Using **square brackets** for ‘queenBee49’ → 4.5
+
+    Code
+
+    - ‘mrSmith78’ → 3.5
+
+        ```jsx
+        userReviews.mrSmith78 = 3.5
+        ```
+
+        ![adding_updating_property_02.jpg](./images/adding_updating_property_02.jpg)
+
+
+    - ‘queenBee49’ → 4.5
+
+        ```jsx
+        userReviews['queenBee49'] = 4.5
+        ```
+
+        ![adding_updating_property_03.jpg](./images/adding_updating_property_03.jpg)
+
+
+    <aside>
+    💡 For adding a property, all you need to do is to access it. Give it a “key” and assign a “value” to it.
+
+    </aside>
+
+    If the property does not exist, you will get “undefined”
+
+    ```jsx
+    userReviews.bach // undefined
+    ```
+
+    ![adding_updating_property_04.jpg](./images/adding_updating_property_04.jpg)
+
+
+- Updating the property
+
+    Beside updating the value of the property manually by assigning a different value to it, you can also use operations to update the value of the property
+
+    - Manually
+
+        Assuming you already have the property with “key” **bach** and “value” **5**
+
+        Now you want to update the “value” by **10**
+
+        ```jsx
+        userReviews['bach'] = 10
+        ```
+
+        ![adding_updating_property_05.jpg](./images/adding_updating_property_05.jpg)
+
+    - Using “**+=**”
+
+    ![adding_updating_property_05.jpg](./images/adding_updating_property_06.jpg)
+
+    - Using “**-=**”
+
+    ![adding_updating_property_06.jpg](./images/adding_updating_property_07.jpg)
+
+    - Using “**++**”
+
+    ![adding_updating_property_07.jpg](./images/adding_updating_property_08.jpg)
