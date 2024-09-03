@@ -602,6 +602,140 @@ Ways of creating a function: Read more at [Function Definitions](https://www.w3s
 
 Same results just different syntaxes and different ways of referencing
 
+### Higher Order Functions
+
+> Functions are…OBJECTS!
+>
+
+```jsx
+// function statement
+function add (x, y) {
+    return x + y;
+}
+
+// function expression
+const subtract = function (x, y) {
+    return x - y;
+}
+
+// function statement
+function multiply (x, y) {
+    return x * y;
+}
+
+// function expression
+const divide = function (x, y) {
+    return x / y;
+}
+```
+
+- Storing the functions in the array “operations”
+
+    ```jsx
+    const operations = [add, subtract, multiply, divide];
+    ```
+
+    - Accessing the functions using the index of the array element
+
+        ```jsx
+        operations[1]
+        operations[3]
+        operations[2]
+        operations[0]
+        ```
+
+        ![higher_order_functions_01.jpg](./images/higher_order_functions_01.jpg)
+
+        ```jsx
+        operations[2](2, 4) // 8
+        operations[1](3, 1) // 2
+        operations[0](7, 3) // 10
+        operations[3](60, 4) // 15
+        ```
+
+
+    - Print out all the functions from array “operations”
+
+        ```jsx
+        for (let i = 0; i <= operations.length - 1; i++) {
+            console.log(operations[i])
+        }
+        ```
+
+        ![higher_order_functions_04.jpg](./images/higher_order_functions_04.jpg)
+
+
+    - Run the numbers (arguments) through all the functions
+
+        ```jsx
+        for (let func of operations) {
+          let result = func(10, 2);
+          console.log(result)
+        }
+        ```
+
+        ![higher_order_functions_05.jpg](./images/higher_order_functions_05.jpg)
+
+
+- Storing the function in an object
+
+    ```jsx
+    const thing = {
+        doSomething: multiply
+    }
+    ```
+
+    - Accessing the function
+
+        ```jsx
+        thing.doSomething
+        ```
+
+        ![higher_order_functions_06.jpg](./images/higher_order_functions_06.jpg)
+
+
+    - Using the function for calculation
+
+        ```jsx
+        thing.doSomething(2, 5) // 10
+        ```
+
+        ![higher_order_functions_07.jpg](./images/higher_order_functions_07.jpg)
+
+
+<aside>
+💡
+
+A “higher-order function” is **a function that accepts functions as parameters and/or returns a function**.
+
+</aside>
+
+- Question
+    - **for** loop over the “operations” array only logs out the “division” function. Why is that?
+        - **for….of** version
+
+            ```jsx
+            for (let func of operations) {
+                func;
+            }
+            ```
+
+            logs out only the “divide” function?
+
+            ![higher_order_functions_02.jpg](./images/higher_order_functions_02.jpg)
+
+        - Regular **for** function
+
+            ```jsx
+            for (let i = 0; i <= operations.length - 1; i++) {
+                operations[i]
+            }
+            ```
+
+            logs out only the “divide” function?
+
+            ![higher_order_functions_03.jpg](./images/higher_order_functions_03.jpg)
+
 ### Hoisting
 
 > MDN docs at [https://developer.mozilla.org/en-US/docs/Glossary/Hoisting](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting)
