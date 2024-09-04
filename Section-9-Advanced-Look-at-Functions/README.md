@@ -736,6 +736,135 @@ A “higher-order function” is **a function that accepts functions as paramet
 
             ![higher_order_functions_03.jpg](./images/higher_order_functions_03.jpg)
 
+### Functions as Arguments
+
+- Higher order functions
+    - Functions that operate on/with other functions
+    - They can
+        - Accept other functions as arguments
+        - Return a function
+
+- Examples for calling functions that are passed as arguments
+    - Example 1:
+
+        Repeat the same function by manually calling it multiple times
+
+        ```jsx
+        // higher order function
+        function callThreeTimes (f) {
+            f();
+            f();
+            f();
+        }
+        ```
+
+        Calling the functions multiple times
+
+        - **cry** function
+
+            ```jsx
+            function cry () {
+                console.log("BOO HOO I'M SO SAD")
+            }
+            ```
+
+            Passing “cry” into “callThreeTimes” as an argument
+
+            ```jsx
+            callThreeTimes(cry)
+            ```
+
+            ![functions_arguments_01.jpg](./images/functions_arguments_01.jpg)
+
+
+        - **rage** function
+
+            ```jsx
+            function rage () {
+              console.log("I HATE EVERYTHING");
+            }
+            ```
+
+            Passing “rage” into “callThreeTimes” as an argument
+
+            ```jsx
+            callThreeTimes(rage)
+            ```
+
+            ![functions_arguments_02.jpg](./images/functions_arguments_02.jpg)
+
+
+    - Example 2:
+
+        Repeat the same function by manually calling it multiple times using **for** loop
+
+        ```jsx
+        function repeatNTimes (action, num) {
+          for (let i = 0; i < num; i++) {
+            action()
+          }
+        }
+        ```
+
+        - **cry** function
+
+            ```jsx
+            repeatNTimes(cry, 7)
+            ```
+
+            ![functions_arguments_03.jpg](./images/functions_arguments_03.jpg)
+
+
+        - **rage** function
+
+            ```jsx
+            repeatNTimes(rage, 7)
+            ```
+
+            ![functions_arguments_04.jpg](./images/functions_arguments_04.jpg)
+
+
+    - Example 3:
+        - New functions **happy** and **cool**
+
+            **happy**
+
+            ```jsx
+            function happy () {
+              console.log("I AM HAPPY!!")
+            }
+            ```
+
+            **cool**
+
+            ```jsx
+            function cool () {
+              console.log("I AM COOL!!")
+            }
+            ```
+
+        - function **pickOne**
+
+            ```jsx
+            function pickOne (f1, f2) {
+              let rand = Math.random();
+              console.log(rand);
+              if (rand < .5) {
+                f1();
+              } else {
+                f2();
+              }
+            }
+            ```
+
+            Pass **happy** and **cool** into **pickOne** as arguments
+
+            ```jsx
+            pickOne (happy, cool)
+            ```
+
+            ![functions_arguments_05.jpg](./images/functions_arguments_05.jpg)
+
 ### Hoisting
 
 > MDN docs at [https://developer.mozilla.org/en-US/docs/Glossary/Hoisting](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting)
