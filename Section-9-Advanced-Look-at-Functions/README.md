@@ -865,6 +865,180 @@ A “higher-order function” is **a function that accepts functions as paramet
 
             ![functions_arguments_05.jpg](./images/functions_arguments_05.jpg)
 
+### Callbacks
+
+> A function that is **passed** into another function as an **argument**
+It is **invoked inside** the outer function
+>
+
+- Examples:
+    - Example 1:
+
+        ```jsx
+        function callThreeTimes (f) {
+            f();
+            f();
+            f();
+        }
+
+        function happy () {
+          console.log("I AM HAPPY!!")
+        }
+
+        callThreeTimes(happy);
+        ```
+
+        ![callbacks_01.jpg](./images/callbacks_01.jpg)
+
+        Explanation: **happy** is the *callback* function that is passed into **callThreeTimes**
+
+    - Example 2:
+
+        [setTimeout](https://developer.mozilla.org/en-US/docs/Web/API/setTimeout): You will run a certain block code or a function after a certain number of milliseconds.
+
+        - Syntax:
+
+            ```jsx
+            setTimeout(code, delay)
+            ```
+
+
+        - Code:
+
+            ```jsx
+            function grumpus () {
+              console.log("GAHHHH GO AWAY")
+            }
+
+            setTimeout (grumpus, 5000)
+            ```
+
+            ![callbacks_02.jpg](./images/callbacks_02.jpg)
+
+            Explanation:
+
+            - **grumpus** is the *callback* function that is passed into **setTimeout()**
+            - **grumpus** is a standalone function
+
+    - Example 3: setTimeout with an anonymous function
+
+        ```jsx
+        setTimeout (function () {
+          alert("WELCOME!")
+        }, 5000)
+        ```
+
+        ![callbacks_03.jpg](./images/callbacks_03.jpg)
+
+        ![callbacks_04.jpg](./images/callbacks_04.jpg)
+
+    - Example 4: Click on the button to log out the result in the console
+        - index.html
+
+            ```jsx
+            <body>
+              <button>Don't click me!</button>
+              <script src="./app.js"></script>
+            </body>
+            ```
+
+        - app.js
+            - Separate functions
+
+                ```jsx
+                function grumpus () {
+                  console.log('GAHHHH! GO AWAY!');
+                };
+
+                const btn = document.querySelector('button');
+                btn.addEventListener('click', grumpus);
+                ```
+
+            - All in one function (using anonymous function)
+
+                ```jsx
+                const btn = document.querySelector('button');
+                btn.addEventListener('click', function () {
+                  console.log('GAHHHH! GO AWAY!')
+                });
+                ```
+
+        - output
+            - browser
+
+                ![callbacks_05.jpg](./images/callbacks_05.jpg)
+
+            - dev console
+
+                After clicking on the button
+
+                ![callbacks_06.jpg](./images/callbacks_06.jpg)
+
+
+- Standalone vs. Anonymous function
+    - A standalone function is a function with a name, like the **happy** function in the above example. The purpose of a standalone function is when you want to reuse the same function for many times.
+    - An anonymous function is a function with **no** **name**. If you only need a function for a one-time use function, the anonymous would be a good use for that purpose.
+
+- Real life examples:
+    - Pass in a *callback* if you want to make a request to load data from Facebook’s API, that request takes time. You pass in a *callback* function that will be called when the request is finished, when the data is back.
+    - If you want to run code, when a user clicks on a button, on a page, or when they hover over a photo, the code that you write to set that up requires us to pass in a *callback* function which will be executed when the user hovers or when the user clicks.
+
+- Questions
+    - When I run **setTimeout()** in the dev console, it returns a number of digits. What is that number about?
+
+        ![callbacks_07.jpg](./images/callbacks_07.jpg)
+
+        ![callbacks_08.jpg](./images/callbacks_08.jpg)
+
+        The numbers you're seeing when you input the code in the browser's developer console are **timer IDs** that are returned by the `setTimeout()` function.
+
+        Here's how it works:
+
+        - When you call `setTimeout(grumpus, 5000)`, the JavaScript runtime schedules the execution of the `grumpus` function to run after 5000 milliseconds (5 seconds).
+        - The `setTimeout()` function returns a unique ID (like 224, 763, etc.) that corresponds to the timer that was created. This ID can be used to cancel the timeout later using `clearTimeout()`.
+
+        If you want to cancel the timer before it executes, you can do so using the ID:
+
+        ```jsx
+        clearTimeout(timerId);
+        ```
+
+        The numbers you're seeing (like 224, 763, etc.) are just unique identifiers for the scheduled `setTimeout` timer and don't carry any other specific meaning.
+
+
+    - Why do I need to put <button> above <script> in the html file?
+
+        ```jsx
+        <body>
+          <button>Don't click me!</button>
+          <script src="./app.js"></script>
+        </body>
+        ```
+
+        If I were to put <script> before (above) <button>, I would have gotten the error
+
+        ```jsx
+        <body>
+          <script src="./app.js"></script>
+          <button>Don't click me!</button>
+        </body>
+        ```
+
+        ![callbacks_09.jpg](./images/callbacks_09.jpg)
+
+        addEventListener in **app.js** is this function
+
+        ```jsx
+        const btn = document.querySelector('button');
+        btn.addEventListener('click', grumpus);
+        ```
+
+        Reason:
+
+        The error `"Uncaught TypeError: Cannot read properties of null (reading 'addEventListener')"` occurs because the JavaScript code is trying to attach an event listener to the button before the button exists in the DOM.
+
+        Even though the button is placed below the script in your HTML, browsers may execute the JavaScript code in the `<script>` tag before the button is fully loaded. This results in `document.querySelector('button')` returning `null`, leading to the error when trying to call `addEventListener` on `null`.
+
 ### Hoisting
 
 > MDN docs at [https://developer.mozilla.org/en-US/docs/Glossary/Hoisting](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting)
