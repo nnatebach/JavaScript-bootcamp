@@ -1,6 +1,6 @@
 ## CONTENT
 
-### Intro to Array Callback Methods
+### 01. Intro to Array Callback Methods
 
 > Callbacks are central to JavaScript
 >
@@ -20,7 +20,7 @@
         - [some](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
         - [every](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every)
 
-### forEach
+### 02. forEach
 
 > Calls the function once per element in the array
 >
@@ -264,7 +264,7 @@
 
             ![forEach_12.jpg](./images/forEach_12.jpg)
 
-### map
+### 03. map
 
 > [**map**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) creates a new array from an existing array
 >
@@ -513,7 +513,7 @@ Similar to **forEach**, **map** calls that callback with every element in the ar
             - The issue in your code arises because the function inside `map()` doesn't return anything explicitly.
             - In JavaScript, if a function does not have a `return` statement, it returns `undefined` by default.
 
-### Arrow Function Intro
+### 04. Arrow Function Intro
 
 > An alternative way of defining a function expression
 >
@@ -601,7 +601,7 @@ Similar to **forEach**, **map** calls that callback with every element in the ar
 
             If you don’t want to see the *undefined*, you can call the **greeting()** from within a console.log
 
-### Arrow Functions: Implicit Returns
+### 05. Arrow Functions: Implicit Returns
 
 > Adding an implicit return to an arrow function means that you don’t have to write the return keyword, in some scenarios you can write a one liner arrow function.
 >
@@ -779,7 +779,7 @@ Similar to **forEach**, **map** calls that callback with every element in the ar
                 }
                 ```
 
-### Array.find
+### 06. Array.find
 
 > returns the value of the **first element** in the array that satisfies the provided testing function
 >
@@ -988,7 +988,7 @@ Similar to **forEach**, **map** calls that callback with every element in the ar
             console.log(title); // Outputs: 'Bone: The Complete Edition'
             ```
 
-### Filter
+### 07. Filter
 
 > The [**`filter()`**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) method of [`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) instances creates a [shallow copy](https://developer.mozilla.org/en-US/docs/Glossary/Shallow_copy) of a portion of a given array, filtered down to just the elements from the given array that pass the test implemented by the provided function.
 >
@@ -1194,7 +1194,7 @@ Similar to **forEach**, **map** calls that callback with every element in the ar
 
         ![Filter_02.jpg](./images/Filter_02.jpg)
 
-### Some & Every
+### 08. Some & Every
 
 - [Every](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every)
     - Definition:
