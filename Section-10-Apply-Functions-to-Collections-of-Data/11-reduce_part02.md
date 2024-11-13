@@ -90,6 +90,20 @@
         64
         ```
 
+    - Calculate the sum of all array elements using "reduce" and then assign it to a variable
+        Code
+
+        ```jsx
+        const sum = [10, 20, 30, 40, 50].reduce((sum, currVal) => {
+            return sum + currVal
+        })
+        ```
+
+        Output
+
+        ```jsx
+        150
+        ```
 
 - Extra question
     - Use “reduce” to find the greatest value in the array
