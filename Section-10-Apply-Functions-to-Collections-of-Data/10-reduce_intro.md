@@ -7,6 +7,12 @@
 
     ![reduce_intro_01.jpg](./images/reduce_intro_01.jpg)
 
+- Syntax
+
+  ```jsx
+  reduce(callbackFn)
+  reduce(callbackFn, initialValue)
+  ```
 
 - Example:
 
